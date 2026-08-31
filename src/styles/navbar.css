@@ -8,8 +8,8 @@
   z-index: 1000;
 
   padding: 24px 0;
+  transition: all 0.3s ease;
 }
-
 
 .navbar-container {
   width: 90%;
@@ -20,6 +20,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar.shrink{
+  
+  padding: 10px 0;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  width: 65%;
+  left:17%;
+}
+
+.navbar.shrink .navbar-container{
+  max-width: 1400px;
+  width: 85%;
+  margin: 0 auto;
 }
 
 
@@ -35,6 +52,9 @@
   display: block;
 }
 
+.navbar.shrink .logo img{
+  width: 80px;
+}
 
 /* =========================================
    DESKTOP NAVIGATION
@@ -46,6 +66,11 @@
   align-items: center;
 
   gap: 25px;
+}
+
+.navbar.shrink .nav-links{
+  display: flex;
+  gap: 5px;
 }
 
 

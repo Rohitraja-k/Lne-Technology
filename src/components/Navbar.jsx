@@ -20,14 +20,31 @@ function Navbar() {
     }
   }, []);
 
+  const [ isScrolled, setIsScrolled ] = useState(false);
+
+  useEffect(()=>{
+    function handleScroll(){
+      if(window.scrollY > 100){
+        setIsScrolled(true);
+      }
+      else{
+        setIsScrolled(false);
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return(()=>{
+      window.removeEventListener('scroll', handleScroll);
+    })
+  },[]);
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${isScrolled ? "shrink": ""} `}>
 
       <div className="navbar-container">
 
         {/* LOGO */}
 
-        <Link to="/" className="logo">
+        <Link to="/" className={`logo ${isScrolled ? "shrink": ""} `}>
           <img src={logoLne} alt="LNE Technologies" />
         </Link>
 
