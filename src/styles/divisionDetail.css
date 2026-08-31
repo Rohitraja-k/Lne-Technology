@@ -1,0 +1,531 @@
+/* =========================================
+   DIVISION DETAIL
+========================================= */
+
+.division-detail {
+  background: #071018;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.division-detail-container {
+  position: relative;
+  z-index: 1;
+
+  
+
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.division-detail-hero {
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  padding: 140px 0 110px;
+}
+
+.division-back {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 70px;
+
+  color: #aab4bd;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.division-back:hover {
+  color: #ffffff;
+}
+
+.division-detail-label {
+  margin: 0 0 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #8e9aa5;
+}
+
+.division-detail-title {
+  margin: 0;
+
+  font-size: clamp(48px, 7vw, 90px);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
+.division-detail-description {
+  max-width: 780px;
+
+  margin-top: 35px;
+
+  color: #aeb8c1;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.division-detail-number {
+  position: absolute;
+
+  top: 90px;
+  right: 5%;
+
+  font-size: clamp(180px, 25vw, 360px);
+  font-weight: 700;
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.095);
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: 100;
+}
+
+
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
+.division-services {
+  padding: 120px 0 150px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services-header {
+  max-width: 650px;
+  margin-bottom: 60px;
+}
+
+.services-header h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.services-header > p:last-child {
+  margin: 0;
+
+  color: #8f9aa4;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.services-section-number {
+  margin-bottom: 20px;
+
+  color: #66717b;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   SERVICES LIST
+========================================= */
+
+.services-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.service-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition: background 0.3s ease;
+}
+
+.service-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.service-item-open {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================
+   SERVICE HEADER
+========================================= */
+
+.service-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 35px 10px;
+
+  background: none;
+  border: none;
+
+  color: #ffffff;
+  text-align: left;
+
+  cursor: pointer;
+  transition: padding-left 0.3s ease;
+}
+
+.service-header:hover {
+  padding-left: 16px;
+}
+
+.service-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.service-number {
+  padding-top: 5px;
+
+  color: #66717b;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.service-title-wrapper h3 {
+  margin: 0 0 12px;
+
+  font-size: 25px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.service-header:hover .service-title-wrapper h3 {
+  color: #dfe5ea;
+}
+
+.service-title-wrapper p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: #7f8b95;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.service-icon {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 300;
+
+  transition:
+  background 0.3s ease,
+  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item-open .service-icon {
+  transform: rotate(180deg);
+}
+
+.service-header:hover .service-icon {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   SUB SERVICES
+========================================= */
+
+.sub-services {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sub-services-open {
+  grid-template-rows: 1fr;
+}
+
+.sub-services-inner {
+  overflow: hidden;
+
+  padding-left: 83px;
+
+  opacity: 0;
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.sub-services-open .sub-services-inner {
+  padding-bottom: 40px;
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sub-services-label {
+  margin: 0 0 20px;
+
+  color: #66717b;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+.sub-services-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px 40px;
+
+  max-width: 750px;
+}
+
+.sub-service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition:
+    padding-left 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.sub-service:hover {
+  padding-left: 8px;
+
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.sub-service span {
+  color: #66717b;
+
+  font-size: 14px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.sub-service:hover span {
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.sub-service p {
+  margin: 0;
+
+  color: #b0bac3;
+
+  font-size: 14px;
+
+  transition: color 0.3s ease;
+}
+
+.sub-service:hover p {
+  color: #ffffff;
+}
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.back-button {
+  margin-top: 30px;
+
+  padding: 12px 22px;
+
+  background: #ffffff;
+  border: none;
+
+  color: #071018;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .division-detail-hero {
+    padding: 110px 0 80px;
+  }
+
+  .division-back {
+    margin-bottom: 50px;
+  }
+
+  .division-detail-title {
+    letter-spacing: -2px;
+  }
+
+  .division-detail-description {
+    font-size: 16px;
+  }
+
+  .division-services {
+    padding: 80px 0 100px;
+  }
+
+  .services-header {
+    margin-bottom: 45px;
+  }
+
+  .service-header {
+    padding: 28px 5px;
+    gap: 20px;
+  }
+
+  .service-title-wrapper {
+    gap: 20px;
+  }
+
+  .service-title-wrapper h3 {
+    font-size: 21px;
+  }
+
+  .service-title-wrapper p {
+    font-size: 14px;
+  }
+
+  .sub-services-inner {
+    padding-left: 60px;
+  }
+
+  .sub-services-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .division-detail-container {
+    width: 88%;
+  }
+
+  .division-detail-hero {
+    padding: 100px 0 70px;
+  }
+
+  .division-back {
+    margin-bottom: 40px;
+  }
+
+  .division-detail-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .division-detail-title {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .division-detail-description {
+    margin-top: 25px;
+    font-size: 15px;
+  }
+
+  .division-services {
+    padding: 70px 0 90px;
+  }
+
+  .services-header h2 {
+    font-size: 40px;
+  }
+
+  .service-header {
+    padding: 25px 0;
+    align-items: flex-start;
+  }
+
+  .service-title-wrapper {
+    gap: 15px;
+  }
+
+  .service-number {
+    display: none;
+  }
+
+  .service-title-wrapper h3 {
+    font-size: 19px;
+  }
+
+  .service-title-wrapper p {
+    font-size: 13px;
+  }
+
+  .service-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 19px;
+  }
+
+  .sub-services-inner {
+    padding-left: 0;
+  }
+
+  .sub-services-open .sub-services-inner {
+    padding-bottom: 30px;
+  }
+
+  .sub-service {
+    padding: 12px 0;
+  }
+}

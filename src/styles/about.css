@@ -1,0 +1,240 @@
+.about-hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 5%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/about-who-we-are.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  font-size: clamp(50px, 7vw, 90px);
+  line-height: 1;
+  letter-spacing: -4px;
+  margin: 25px 0 35px;
+  max-width: 900px;
+}
+
+.about-hero-description {
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #9faeb9;
+}
+
+.about-intro {
+  padding: 150px 5%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/about-hero-img.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.about-intro-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+
+
+.about-intro-heading h2 {
+  margin: 0;
+
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.about-intro-content {
+  padding: 40px;
+}
+
+.about-intro-content p {
+  margin: 0 0 25px;
+
+  font-size: 17px;
+  line-height: 1.8;
+  color: #9faeb9;
+}
+
+.about-intro-lead {
+  font-size: 27px !important;
+  line-height: 1.6 !important;
+  color: #e5e9ec !important;
+}
+
+.about-values {
+  padding: 150px 0;
+  background: #0b151e;
+}
+
+.about-values-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.about-values-header {
+  max-width: 750px;
+  margin-bottom: 80px;
+}
+
+.about-values-header h2 {
+  margin: 0;
+
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+
+.about-value-01 {
+   background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/technical-expertise.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.about-value-02 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/quality-driven.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.about-value-03 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/reliable-partnership.webp");
+
+  background-size: cover;
+  background-position: center;}
+
+
+
+.about-value-card {
+  min-height: 320px;
+  padding: 35px;
+
+  border-radius:10px ;
+ 
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about-value-number {
+  margin-bottom: auto;
+
+  font-size: 14px;
+  color: #71808b;
+}
+
+.about-value-card h3 {
+  margin: 0 0 18px;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.about-value-card p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.7;
+  color: #9faeb9;
+}
+
+@media (max-width: 768px) {
+  .about-values {
+    padding: 100px 0;
+  }
+
+  .about-values-header {
+    margin-bottom: 50px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-value-card {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    padding: 100px 0;
+  }
+
+  .about-intro-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-intro-heading h2 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .about-intro-lead {
+    font-size: 23px !important;
+  }
+}

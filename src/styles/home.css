@@ -1,0 +1,101 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 5%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/Gemini_Generated_Image_ewill0ewill0ewil.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content{
+  width:min(800px,100%);
+}
+
+.hero-label{
+  margin-bottom: 10px;
+  font-size: 13px;
+  color:#8fa3b5;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 7vw, 90px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  margin-bottom: 30px;
+}
+
+.hero-description{
+  max-width: 600px;
+  line-height: 1.45;
+  font-size: 18px;
+  color:#b5c0c9;
+  margin-bottom:40px;
+}
+
+.hero-buttons{
+  display: flex;
+  gap:30px;
+}
+
+.hero-buttons button{
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  background:#e2b204;
+  color:#071018;
+
+  cursor: pointer;
+}
+
+.hero-buttons button:last-child {
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-buttons button:last-child:hover{
+  background-color: darkgray;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #071018
+  );
+
+  pointer-events: none;
+}
+
+.button1{
+  transition: background 0.3s ease,
+  color 0.3s ease;
+}
+.button1:hover{
+  background: darkgray;
+  color:white;
+}

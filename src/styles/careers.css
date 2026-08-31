@@ -1,0 +1,215 @@
+/* =========================
+   CAREERS HERO
+========================= */
+
+.careers-hero {
+  position: relative;
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 5%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/career-hero.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.careers-hero-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.careers-hero-heading {
+  font-size: 25px;
+  line-height: 1.5;
+  letter-spacing: 3px;
+  color: #8fa3b5;
+}
+
+.careers-hero-intro {
+  font-size: clamp(40px, 7vw, 80px);
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.careers-hero-description {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin: 10px 0;
+  color: #8fa3b5;
+}
+
+.careers-hero-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+
+  background: gold;
+  border: none;
+  color: black;
+
+  font-weight: 600;
+  border-radius: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.careers-hero-button:hover {
+  background: #162f44;
+  color: white;
+}
+
+
+/* =========================
+   WORK WITH LNE
+========================= */
+
+.careers-about {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.careers-about-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+  align-items: center;
+}
+
+.careers-about-image {
+  height: 500px;
+  background-image:
+    url("../assets/bg/career-work.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.careers-about-label {
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: #8fa3b5;
+}
+
+.careers-about-intro {
+  font-size: clamp(36px, 6vh, 60px);
+  line-height: 1.1;
+  margin: 15px 0 25px;
+}
+
+.careers-about-description {
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0;
+  color: #8fa3b5;
+}
+
+
+/* =========================
+   WHY LNE
+========================= */
+
+.careers-why {
+  padding: 120px 0;
+}
+
+.careers-why-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.careers-why-label {
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  font-size: 16px;
+  letter-spacing: 3px;
+
+  color: #8fa3b5;
+}
+
+.careers-why-heading {
+  text-align: center;
+
+  margin: 0 0 50px;
+
+  font-size: clamp(32px, 4vw, 45px);
+  line-height: 1.2;
+
+  padding-bottom: 50px;
+
+  border-bottom: 1px solid #8fa3b5;
+}
+
+.careers-why-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 70px;
+
+  padding: 40px;
+}
+
+.careers-why-item {
+  width: 100%;
+  padding: 70px 100px;
+  border: 1px solid #8fa3b5;
+  border-radius: 20px;
+}
+
+
+.careers-why-item::after{
+  position: relative;
+  left:100px;
+}
+
+.careers-why-number {
+  font-size: 25px;
+
+  margin-bottom: 15px;
+
+  color: #8fa3b5;
+
+  line-height: 1.05;
+}
+
+.careers-why-title {
+  font-size: 30px;
+
+  letter-spacing: -1px;
+
+  line-height: 1.5;
+
+  margin-bottom: 6px;
+}
+
+.careers-why-description {
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.5px;
+
+  color: #8fa3b5;
+}
+

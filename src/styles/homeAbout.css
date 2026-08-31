@@ -1,0 +1,65 @@
+.about-section{
+  padding: 150px 0;
+  background: #071018;
+}
+
+.about-container{
+  width: min(1200px, 90% );
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:100px;
+}
+
+.section-label{
+  margin-bottom: 25px;
+  font-size: 12px;
+
+  letter-spacing: 3px;
+  color:#7890a3;
+}
+
+.about-heading h2{  
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.about-content{
+  padding: 40px;
+}
+.about-content p{
+  margin-bottom: 25px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #9faeb9;
+
+}
+.about-intro{
+  font-size: 27px;
+  line-height: 1.6;
+  color: #e5e9ec;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 25px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border-bottom: 1px solid #536573;
+
+  padding-bottom: 8px;
+
+  transition: gap 0.3s ease;
+}
+
+.about-link:hover {
+  gap: 25px;
+}

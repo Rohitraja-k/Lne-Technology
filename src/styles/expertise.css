@@ -1,0 +1,100 @@
+.expertise-section{
+  padding: 150px 5%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 16, 24, 0.95) 0%,
+      rgba(7, 16, 24, 0.75) 45%,
+      rgba(7, 16, 24, 0.35) 100%
+    ),
+    url("../assets/bg/expertise.webp");
+
+  background-size: cover;
+  background-position: center;
+}
+.expertise-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.expertise-header h2{
+  font-size: clamp(40px, 5vw, 45px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.expertise-item{
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  padding: 35px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  gap:40px;
+}
+
+.expertise-item:hover{
+  background: rgba(159, 174, 185 ,0.15);
+}
+
+.expertise-number {
+  color: #7890a3;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.expertise-info h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.expertise-info p {
+  margin: 0;
+  max-width: 500px;
+  color: #9faeb9;
+  line-height: 1.6;
+} 
+
+.expertise-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.expertise-arrow {
+  display: inline-block;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.expertise-item:hover .expertise-arrow {
+  transform: translateX(8px);
+}
+
+
+@media (max-width: 768px) {
+  .expertise-section {
+    padding: 100px 0;
+  }
+
+  .expertise-item {
+    grid-template-columns: 50px 1fr 30px;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .expertise-header h2 {
+    font-size: 40px;
+  }
+
+  .expertise-info h3 {
+    font-size: 18px;
+  }
+
+  .expertise-info p {
+    font-size: 14px;
+  }
+} 
