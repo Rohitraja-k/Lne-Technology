@@ -81,11 +81,11 @@ function Footer() {
             <h4>GET IN TOUCH</h4>
 
             <a href="mailto:info@lneengg.com">
-              info@lneengg.com
+              info@lnetechnology.com
             </a>
 
             <a href="tel:+919946000000">
-              +91 9946 000 000
+              +91 0000 000 000
             </a>
 
             <span>
