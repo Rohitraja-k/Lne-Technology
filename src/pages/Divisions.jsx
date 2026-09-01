@@ -189,15 +189,12 @@ window.scrollTo({
             </p>
 
             <h2>
-              Engineering solutions
-              <br />
-              built around you.
+              One partner.<br />
+              Multiple engineering capabilities
             </h2>
 
             <p>
-              We combine technical expertise, industry experience
-              and dependable support to deliver solutions that create
-              lasting value for our clients.
+              Our multidisciplinary divisions allow us to support projects with specialized products, services and technical capabilities under one organization
             </p>
 
           </div>
@@ -214,13 +211,11 @@ window.scrollTo({
               </span>
 
               <h3>
-                Technical Expertise
+                Integrated Capabilities
               </h3>
 
               <p>
-                Specialized knowledge across multiple engineering
-                disciplines enables us to approach complex requirements
-                with confidence.
+                Multiple specialist divisions working together to address diverse project requirements.
               </p>
 
             </div>
@@ -233,12 +228,11 @@ window.scrollTo({
               </span>
 
               <h3>
-                Quality & Reliability
+                Industry Knowledge
               </h3>
 
               <p>
-                We focus on dependable solutions, quality execution
-                and consistent performance throughout every project.
+                Experience across demanding industrial and commercial environments gives us a practical understanding of project challenges.
               </p>
 
             </div>
@@ -251,13 +245,11 @@ window.scrollTo({
               </span>
 
               <h3>
-                Industry Experience
+                Responsive Support
               </h3>
 
               <p>
-                Our experience across diverse industries helps us
-                understand practical challenges and deliver effective
-                solutions.
+                We stay connected with our clients throughout the project, responding quickly when requirements change.
               </p>
 
             </div>
@@ -270,12 +262,11 @@ window.scrollTo({
               </span>
 
               <h3>
-                Client Focus
+                Complete Solutions
               </h3>
 
               <p>
-                We work closely with our clients to understand their
-                needs and develop solutions that align with their goals.
+                From specialized products to field services, we provide capabilities that support projects beyond a single discipline.
               </p>
 
             </div>

@@ -6,12 +6,12 @@ function WhyLNE() {
       <div className="why-container">
 
         <div className="why-header">
-          <p className="section-label">WHY LNE TECHNOLOGIES</p>
+          <p className="section-label">WHY LNE TECHNOLOGY</p>
 
           <h2>
-            Built on expertise,
+            Engineering capability.
             <br />
-            quality and reliability.
+            Built for real-world demands.
           </h2>
         </div>
 
@@ -21,10 +21,9 @@ function WhyLNE() {
             <span className="why-number">01</span>
 
             <div>
-              <h3>ENGINEERING EXPERTISE</h3>
+              <h3>Engineering Depth</h3>
               <p>
-                Technical knowledge and practical engineering
-                solutions designed for demanding environments.
+                Strong technical foundations backed by practical knowledge across complex engineering environments.
               </p>
             </div>
           </div>
@@ -33,10 +32,9 @@ function WhyLNE() {
             <span className="why-number">02</span>
 
             <div>
-              <h3>QUALITY & RELIABILITY</h3>
+              <h3>Proven Execution</h3>
               <p>
-                Consistent quality and dependable project
-                execution focused on long-term performance.
+                From planning to completion, we focus on disciplined execution, clear coordination and dependable results.
               </p>
             </div>
           </div>
@@ -45,10 +43,9 @@ function WhyLNE() {
             <span className="why-number">03</span>
 
             <div>
-              <h3>SAFETY FIRST</h3>
+              <h3>Safety By Desin</h3>
               <p>
-                A safety-focused approach integrated into
-                every stage of our engineering work.
+                Safety is integrated into the way we plan, execute and deliver every project.
               </p>
             </div>
           </div>
@@ -57,10 +54,9 @@ function WhyLNE() {
             <span className="why-number">04</span>
 
             <div>
-              <h3>CUSTOMER FOCUS</h3>
+              <h3>Built To Perfrom</h3>
               <p>
-                Solutions developed around client requirements,
-                project goals and operational needs.
+                Solutions developed with long-term operation, maintainability and performance in mind.
               </p>
             </div>
           </div>

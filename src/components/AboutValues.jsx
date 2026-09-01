@@ -28,9 +28,9 @@ function AboutValues() {
           <p className="section-label">WHAT DRIVES US</p>
 
           <h2>
-            Built on expertise.
+            Experience that matters.
             <br />
-            Driven by reliability.
+            Standards that last.
           </h2>
         </div>
 

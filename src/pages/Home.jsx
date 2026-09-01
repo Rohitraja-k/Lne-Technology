@@ -23,14 +23,11 @@ const navigate = useNavigate();
           <p className="hero-label">LNE TECHNOLOGY</p>
 
           <h1>
-            Engineering Solutions
-            <br />
-            Built for What's Next.
+            “Solutions For a World in Motion,<br />Designed For What’s Next.”.
           </h1>
 
           <p className="hero-description">
-            Delivering reliable engineering and technical solutions
-            through expertise, quality and innovation.
+            Connecting businesses with the products, capabilities and support they need to move forward with confidence.
           </p>
 
           <div className="hero-buttons">

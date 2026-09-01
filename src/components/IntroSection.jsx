@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/intro.css";
-import aboutHeroImg from "../assets/bg/home-about.png";
+import aboutHeroImg from "../assets/bg/oiil.png";
 
 function IntroSection(){
   return(

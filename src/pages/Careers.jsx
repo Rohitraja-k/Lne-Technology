@@ -48,38 +48,38 @@ function Careers() {
       <section className="careers-why">
         <div className="careers-why-container">
           <p className="careers-why-label">WHY <b>LNE</b></p>
-          <h2 className="careers-why-heading">Build Your Career With Us</h2>
+          <h2 className="careers-why-heading">Build a career with purpose.</h2>
           <div className="careers-why-grid">
 
             <div className="careers-why-item">
 
               <p className="careers-why-number">01</p>
-              <h1 className="careers-why-title">Technical Expertise</h1>
-              <p className="careers-why-description">Work alongside experienced professionals and develop practical knowledge across engineering disciplines</p>
+              <h1 className="careers-why-title">Learn & Grow</h1>
+              <p className="careers-why-description">Develop your technical knowledge through hands-on experience, guidance and exposure to real engineering environments.</p>
 
             </div>
 
             <div className="careers-why-item">
 
               <p className="careers-why-number">02</p>
-              <h1 className="careers-why-title">Diverse Project</h1>
-              <p className="careers-why-description">Gain exposure to real-world projects serving different industries and technical requirements.</p>
+              <h1 className="careers-why-title">Make an Impact</h1>
+              <p className="careers-why-description">Take responsibility for meaningful work that contributes directly to projects and customers.</p>
 
             </div>
 
             <div className="careers-why-item">
 
               <p className="careers-why-number">03</p>
-              <h1 className="careers-why-title">Professional Growth</h1>
-              <p className="careers-why-description">Build your skills through hands-on experience, responsibility and continuous learning.</p>
+              <h1 className="careers-why-title">Work Across Disciplines</h1>
+              <p className="careers-why-description">Gain exposure to different engineering fields and understand how specialist teams work together.</p>
 
             </div>
 
             <div className="careers-why-item">
 
               <p className="careers-why-number">04</p>
-              <h1 className="careers-why-title">Safety & Excellance</h1>
-              <p className="careers-why-description">Be part of a team committed to safety, quality and reliable engineering practices.</p>
+              <h1 className="careers-why-title">Grow with LNE</h1>
+              <p className="careers-why-description">Build your career within a company that values initiative, responsibility and continuous improvement.</p>
 
             </div>
 
