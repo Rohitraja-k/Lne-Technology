@@ -17,7 +17,7 @@ function IntroSection(){
       <div className="intro-text">
         
         <div className="intro-heading">
-          <p className="section-label">ABOUT LNE TECHNOLOGIES</p>
+          <p className="section-label">ABOUT LNE TECHNOLOGY</p>
 
           <h2>
             Engineering expertise.
@@ -31,7 +31,7 @@ function IntroSection(){
         <div className="intro-content">
 
           <p className="intro-description">
-            LNE Technologies delivers comprehensive engineering and
+            LNE Technology delivers comprehensive engineering and
             technical solutions designed to meet the requirements of
             demanding industrial and commercial environments.
           </p>
@@ -43,7 +43,7 @@ function IntroSection(){
           </p>
 
           <Link to  ="/about" className="intro-link">
-            Discover LNE Technologies
+            Discover LNE Technology
             <span>→</span>
           </Link>
           

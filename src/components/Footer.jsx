@@ -33,7 +33,7 @@ function Footer() {
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
               LNE
-              <span>TECHNOLOGIES</span>
+              <span>TECHNOLOGY</span>
             </Link>
 
             <p>
@@ -100,7 +100,7 @@ function Footer() {
         <div className="footer-bottom">
 
           <p>
-            © 2026 LNE Technologies. All rights reserved.
+            © 2026 LNE Technology. All rights reserved.
           </p>
 
           <div className="footer-bottom-links">

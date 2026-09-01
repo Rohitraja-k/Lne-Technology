@@ -111,7 +111,7 @@ function Contact() {
           <div className="contact-hero-content">
 
             <span className="contact-eyebrow">
-              CONTACT LNE TECHNOLOGIES
+              CONTACT LNE TECHNOLOGY
             </span>
 
             <h1>
@@ -504,9 +504,9 @@ function Contact() {
                 <h3>Head Office</h3>
 
                 <p>
-                  LNE Technologies Pvt. Ltd.
+                  LNE Technology Pvt. Ltd.
                   <br />
-                  Kerala, India
+                  Thrissur,Kerala, India
                 </p>
               </div>
 
@@ -542,9 +542,9 @@ function Contact() {
                 <h3>Email Us</h3>
 
                 <p>
-                  info@lnetech.com
+                  info@lnetechnology.com
                   <br />
-                  sales@lnetech.com
+                  sales@lnetechnology.com
                 </p>
               </div>
 
@@ -659,7 +659,7 @@ function Contact() {
                 <div>
 
                   <strong>
-                    LNE Technologies
+                    LNE Technology
                   </strong>
 
                   <small>
