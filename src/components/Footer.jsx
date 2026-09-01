@@ -80,7 +80,7 @@ function Footer() {
           <div className="footer-column footer-contact">
             <h4>GET IN TOUCH</h4>
 
-            <a href="mailto:info@lneengg.com">
+            <a href="mailto:info@lnetechnology.com">
               info@lnetechnology.com
             </a>
 
