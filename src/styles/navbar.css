@@ -26,7 +26,7 @@
   
   padding: 10px 0;
   border-radius: 40px;
-  background: rgba(26, 19, 19, 0.08);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(25px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   width: 65%;
@@ -309,27 +309,85 @@
 }
 
 
+
 /* =========================================
    TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
 
+  /* ================================
+     NAVBAR
+  ================================= */
+
   .navbar {
+    width: 100%;
+    left: 0;
     padding: 18px 0;
   }
 
-
   .navbar-container {
     width: 90%;
+    max-width: none;
+    margin: 0 auto;
   }
 
 
+  /* ================================
+     IMPORTANT:
+     SHRINKED NAVBAR ON MOBILE
+  ================================= */
+
+  .navbar.shrink {
+    width: 100%;
+    left: 0;
+    padding: 12px 0;
+
+    border-radius: 0;
+
+    background: rgba(7, 16, 24, 0.85);
+    backdrop-filter: blur(20px);
+
+    box-shadow: none;
+  }
+
+  .navbar.shrink .navbar-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+  /* ================================
+     LOGO
+  ================================= */
+
+  .logo img {
+    width: 105px;
+    height: auto;
+  }
+
+  .navbar.shrink .logo img {
+    width: 90px;
+  }
+
+
+  /* ================================
+     HIDE DESKTOP NAV
+  ================================= */
+
   .nav-links,
-  .nav-cta {
+  .nav-cta,
+
+  /* THIS OVERRIDES .navbar.shrink .nav-links */
+  .navbar.shrink .nav-links,
+  .navbar.shrink .nav-cta {
     display: none;
   }
 
+
+  /* ================================
+     MOBILE MENU BUTTON
+  ================================= */
 
   .mobile-menu-button {
     display: flex;
@@ -351,54 +409,78 @@
     font-size: 22px;
 
     cursor: pointer;
+
+    flex-shrink: 0;
   }
 
 
-  /* =========================================
+  /* ================================
      MOBILE NAV PANEL
-  ========================================= */
+  ================================= */
 
-  .mobile-nav {
-    display: flex;
+ /* =========================================
+   MOBILE NAV PANEL
+========================================= */
 
-    flex-direction: column;
+.mobile-nav {
+  position: absolute;
 
-    width: 90%;
+  top: calc(100% + 10px);
+  left: 5%;
 
-    margin: 15px auto 0;
+  width: 90%;
+  max-width: 500px;
 
-    padding: 20px;
+  margin: 0;
 
-    background: #071018;
+  padding: 20px;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
 
-    border-radius: 16px;
+  display: flex;
+  flex-direction: column;
 
-    opacity: 0;
+  background: #071018;
 
-    transform: translateY(-15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-    pointer-events: none;
+  border-radius: 16px;
 
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
-  }
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(-15px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+
+  z-index: 1001;
+}
 
 
-  .mobile-nav-open {
-    opacity: 1;
+/* =========================================
+   OPEN MOBILE NAV
+========================================= */
 
-    transform: translateY(0);
+.mobile-nav-open {
+  opacity: 1;
 
-    pointer-events: auto;
-  }
+  visibility: visible;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
 
 
-  /* =========================================
+  /* ================================
      MOBILE NAV LINKS
-  ========================================= */
+  ================================= */
 
   .mobile-nav a {
     padding: 14px 5px;
@@ -418,6 +500,75 @@
   }
 
 
+  .mobile-nav a:hover {
+    color: #ffffff;
+  }
+
+
+  /* ================================
+     MOBILE DIVISIONS
+  ================================= */
+
+  .mobile-divisions {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+
+  .mobile-divisions-toggle {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px 5px;
+
+    background: none;
+
+    border: none;
+
+    color: #d6dce1;
+
+    font-size: 16px;
+
+    text-align: left;
+
+    cursor: pointer;
+  }
+
+
+  .mobile-divisions-toggle:hover {
+    color: #ffffff;
+  }
+
+
+  .mobile-divisions-list {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 5px 0 10px 15px;
+  }
+
+
+  .mobile-divisions-list a {
+    padding: 10px 5px;
+
+    border-bottom: none;
+
+    color: #8f9aa4;
+
+    font-size: 14px;
+  }
+
+
+  .mobile-divisions-list a:hover {
+    color: #ffffff;
+  }
+
+
   .mobile-divisions-list a.active {
     color: #ffffff;
 
@@ -425,14 +576,16 @@
   }
 
 
-  .mobile-nav a:hover {
+  .mobile-divisions-active {
     color: #ffffff;
+
+    font-weight: 500;
   }
 
 
-  /* =========================================
+  /* ================================
      MOBILE CTA
-  ========================================= */
+  ================================= */
 
   .mobile-nav-cta {
     margin-top: 18px;
@@ -449,73 +602,4 @@
 
     cursor: pointer;
   }
-}
-
-
-/* =========================================
-   MOBILE DIVISIONS
-========================================= */
-
-.mobile-divisions {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-
-.mobile-divisions-toggle {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 14px 5px;
-
-  background: none;
-
-  border: none;
-
-  color: #d6dce1;
-
-  font-size: 16px;
-
-  text-align: left;
-
-  cursor: pointer;
-}
-
-
-.mobile-divisions-toggle:hover {
-  color: #ffffff;
-}
-
-
-.mobile-divisions-list {
-  display: flex;
-
-  flex-direction: column;
-
-  padding: 5px 0 10px 15px;
-}
-
-
-.mobile-divisions-list a {
-  padding: 10px 5px;
-
-  border-bottom: none;
-
-  color: #8f9aa4;
-
-  font-size: 14px;
-}
-
-
-.mobile-divisions-list a:hover {
-  color: #ffffff;
-}
-
-
-.mobile-divisions-active {
-  color: #ffffff;
-
-  font-weight: 500;
 }
