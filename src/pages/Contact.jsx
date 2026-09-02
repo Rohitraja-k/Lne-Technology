@@ -71,14 +71,44 @@ function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
       return;
     }
 
-    console.log("Enquiry submitted:", formData);
+    try {
+    const response = await fetch("http://localhost:5000/api/enquiries", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setSubmitted(true);
+
+      setFormData({
+        fullName: "",
+        company: "",
+        email: "",
+        phone: "",
+        enquiryType: "",
+        project: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+      setSubmitted(false);
+      }, 5000);
+    }
+  } catch (error) {
+  console.error("Error submitting enquiry:", error);
+  }
 
     setSubmitted(true);
 

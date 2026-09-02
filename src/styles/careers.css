@@ -16,9 +16,9 @@
       90deg,
       rgba(7, 16, 24, 0.95) 0%,
       rgba(7, 16, 24, 0.75) 45%,
-      rgba(7, 16, 24, 0.35) 100%
+      rgba(7, 16, 24, 0.45) 100%
     ),
-    url("../assets/bg/career-hero.webp");
+    url("../assets/bg/career-hero.jpg");
 
   background-size: cover;
   background-position: center;

@@ -16,7 +16,7 @@ function AboutHero() {
         </h1>
 
         <p className="about-hero-description">
-          As a premier provider and distributor of industrial solutions, L & E Engineering FZCO specializes in a wide range of products including electrical, industrial, communications, MRO, and OEM offerings, as well as construction materials and advanced supply chain management & logistics services. Welcome to L & E Engineering FZCO – Your trusted partner for reliable, customer-driven solutions across various industry segments including Electrical, Instrumentation, Oil & Gas, Lighting, Fixing Systems, and Tools & Core Cutting.
+          LNE Technologies is a trusted provider and distributor of industrial solutions, offering a diverse range of products and services across electrical, industrial, communications, MRO, OEM, construction, and specialized technical requirements. With capabilities spanning Electrical, Instrumentation, Oil & Gas, Lighting, Support Systems, Tools, and Concrete Drilling & Sawing, LNE Technologies serves customers across various industry segments with reliable and customer-focused solutions. Our aim is to provide the right products, services, and support to meet the evolving requirements of our customers and their projects.
         </p>
 
       </div>
