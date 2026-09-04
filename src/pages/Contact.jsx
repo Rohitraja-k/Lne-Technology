@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../styles/contact.css";
 
 function Contact() {
-
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo({
-      top:0,
-      behaviour: "smooth"
+      top: 0,
+      behavior: "smooth",
     });
-  },[]);
+  }, []);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -22,6 +22,8 @@ function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +37,8 @@ function Contact() {
       ...prev,
       [name]: "",
     }));
+
+    setSubmitError("");
   };
 
   const validateForm = () => {
@@ -78,18 +82,26 @@ function Contact() {
       return;
     }
 
+    setIsSending(true);
+    setSubmitError("");
+    setSubmitted(false);
+
     try {
-    const response = await fetch("http://localhost:5000/api/enquiries", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+      await emailjs.send(
+        "service_meni95e",
+        "template_5cm239a",
+        {
+          fullName: formData.fullName,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          enquiryType: formData.enquiryType,
+          project: formData.project,
+          message: formData.message,
+        },
+        "EvRrPQbl6fdjwKYwJ"
+      );
 
-    const data = await response.json();
-
-    if (data.success) {
       setSubmitted(true);
 
       setFormData({
@@ -103,28 +115,17 @@ function Contact() {
       });
 
       setTimeout(() => {
-      setSubmitted(false);
+        setSubmitted(false);
       }, 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+
+      setSubmitError(
+        "Unable to send your enquiry right now. Please try again."
+      );
+    } finally {
+      setIsSending(false);
     }
-  } catch (error) {
-  console.error("Error submitting enquiry:", error);
-  }
-
-    setSubmitted(true);
-
-    setFormData({
-      fullName: "",
-      company: "",
-      email: "",
-      phone: "",
-      enquiryType: "",
-      project: "",
-      message: "",
-    });
-
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
   };
 
   return (
@@ -162,8 +163,7 @@ function Contact() {
       </section>
 
 
-
-       {/* ================================
+      {/* ================================
           ENGINEERING ENQUIRY
       ================================= */}
 
@@ -191,7 +191,6 @@ function Contact() {
                 or business enquiry. Our team will review your
                 request and get in touch with you.
               </p>
-
 
               <div className="enquiry-points">
 
@@ -264,6 +263,21 @@ function Contact() {
               )}
 
 
+              {submitError && (
+                <div className="form-error">
+
+                  <strong>
+                    Submission Failed
+                  </strong>
+
+                  <span>
+                    {submitError}
+                  </span>
+
+                </div>
+              )}
+
+
               <form
                 className="enquiry-form"
                 onSubmit={handleSubmit}
@@ -285,6 +299,7 @@ function Contact() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Enter your full name"
+                      disabled={isSending}
                     />
 
                     {errors.fullName && (
@@ -309,6 +324,7 @@ function Contact() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Company name"
+                      disabled={isSending}
                     />
 
                   </div>
@@ -331,6 +347,7 @@ function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="yourname@company.com"
+                      disabled={isSending}
                     />
 
                     {errors.email && (
@@ -355,6 +372,7 @@ function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 XXXXX XXXXX"
+                      disabled={isSending}
                     />
 
                     {errors.phone && (
@@ -379,41 +397,42 @@ function Contact() {
                     name="enquiryType"
                     value={formData.enquiryType}
                     onChange={handleChange}
+                    disabled={isSending}
                   >
 
                     <option value="" disabled>
                       Select an enquiry type
                     </option>
 
-                    <option value="project">
+                    <option value="Project / Engineering Enquiry">
                       Project / Engineering Enquiry
                     </option>
 
-                    <option value="product">
+                    <option value="Product Enquiry">
                       Product Enquiry
                     </option>
 
-                    <option value="technical">
+                    <option value="Technical Support">
                       Technical Support
                     </option>
 
-                    <option value="service">
+                    <option value="Service Enquiry">
                       Service Enquiry
                     </option>
 
-                    <option value="quotation">
+                    <option value="Quotation Request">
                       Quotation Request
                     </option>
 
-                    <option value="partnership">
+                    <option value="Business / Partnership">
                       Business / Partnership
                     </option>
 
-                    <option value="career">
+                    <option value="Career Enquiry">
                       Career Enquiry
                     </option>
 
-                    <option value="other">
+                    <option value="Other">
                       Other
                     </option>
 
@@ -441,6 +460,7 @@ function Contact() {
                     value={formData.project}
                     onChange={handleChange}
                     placeholder="Project name or requirement"
+                    disabled={isSending}
                   />
 
                 </div>
@@ -459,7 +479,8 @@ function Contact() {
                     onChange={handleChange}
                     placeholder="Tell us about your requirement..."
                     rows="6"
-                  ></textarea>
+                    disabled={isSending}
+                  />
 
                   {errors.message && (
                     <small>
@@ -473,14 +494,15 @@ function Contact() {
                 <button
                   type="submit"
                   className="enquiry-submit"
+                  disabled={isSending}
                 >
 
                   <span>
-                    Submit Enquiry
+                    {isSending ? "Sending Enquiry..." : "Submit Enquiry"}
                   </span>
 
                   <span className="submit-arrow">
-                    →
+                    {isSending ? "..." : "→"}
                   </span>
 
                 </button>
@@ -536,7 +558,7 @@ function Contact() {
                 <p>
                   LNE Technology Pvt. Ltd.
                   <br />
-                  Thrissur,Kerala, India
+                  Thrissur, Kerala, India
                 </p>
               </div>
 
@@ -604,9 +626,6 @@ function Contact() {
         </div>
 
       </section>
-
-
-     
 
 
       {/* ================================
