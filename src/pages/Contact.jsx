@@ -575,9 +575,9 @@ function Contact() {
                 <h3>Call Us</h3>
 
                 <p>
-                  +91 XXXXX XXXXX
+                  +91 9037879035
                   <br />
-                  +91 XXXXX XXXXX
+                  +91 9037879020
                 </p>
               </div>
 
@@ -596,7 +596,7 @@ function Contact() {
                 <p>
                   info@lnetechnology.com
                   <br />
-                  sales@lnetechnology.com
+                  office@lnetechnology.com
                 </p>
               </div>
 
@@ -676,7 +676,7 @@ function Contact() {
                 <span>PHONE</span>
 
                 <p>
-                  +91 XXXXX XXXXX
+                  +91 9037879020
                 </p>
 
               </div>
