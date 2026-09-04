@@ -628,108 +628,110 @@ function Contact() {
       </section>
 
 
-      {/* ================================
-          LOCATION
-      ================================= */}
+    {/* ================================
+        LOCATION
+    ================================= */}
 
-      <section className="location-section">
+    <section className="location-section">
 
-        <div className="contact-container">
+      <div className="contact-container">
 
-          <div className="location-wrapper">
+        <div className="location-wrapper">
 
-            <div className="location-content">
+          <div className="location-content">
 
-              <span className="contact-eyebrow">
-                OUR LOCATION
-              </span>
+            <span className="contact-eyebrow">
+              OUR LOCATION
+            </span>
 
-              <h2>
-                Visit Our
-                <span>Office.</span>
-              </h2>
+            <h2>
+              Visit Our
+              <span>Office.</span>
+            </h2>
 
-              <p>
-                Connect with our team at our office for business
-                discussions, project meetings and technical
-                consultations.
-              </p>
-
-
-              <div className="location-details">
-
-                <div>
-
-                  <span>ADDRESS</span>
-
-                  <p>
-                    LNE Technologies Pvt. Ltd.
-                    <br />
-                    Kerala, India
-                  </p>
-
-                </div>
+            <p>
+              Connect with our team at our office for business
+              discussions, project meetings and technical
+              consultations.
+            </p>
 
 
-                <div>
+            <div className="location-details">
 
-                  <span>PHONE</span>
+              <div>
 
-                  <p>
-                    +91 XXXXX XXXXX
-                  </p>
+                <span>ADDRESS</span>
 
-                </div>
-
-
-                <div>
-
-                  <span>EMAIL</span>
-
-                  <p>
-                    info@lnetechnology.com
-                  </p>
-
-                </div>
+                <p>
+                  LNE Technologies Pvt. Ltd.
+                  <br />
+                  Kerala, India
+                </p>
 
               </div>
 
-            </div>
 
+              <div>
 
-            <div className="map-placeholder">
+                <span>PHONE</span>
 
-              <div className="map-grid"></div>
-
-              <div className="map-marker">
-
-                <span className="marker-dot"></span>
-
-                <div>
-
-                  <strong>
-                    LNE Technology
-                  </strong>
-
-                  <small>
-                    Kerala, India
-                  </small>
-
-                </div>
+                <p>
+                  +91 XXXXX XXXXX
+                </p>
 
               </div>
 
-              <span className="map-label">
-                LOCATION
-              </span>
+
+              <div>
+
+                <span>EMAIL</span>
+
+                <p>
+                  info@lnetechnology.com
+                </p>
+
+              </div>
 
             </div>
 
           </div>
 
+
+          <div className="map-container">
+            <a
+              href="https://maps.app.goo.gl/7dhfnVKLxYBZSdE37"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="map-location-link"
+            >
+              <div className="map-location-icon">
+                ↗
+              </div>
+
+              <div className="map-location-text">
+                <strong>LNE Technology</strong>
+                <span>View on Google Maps</span>
+              </div>
+            </a>
+
+            <iframe
+              title="LNE Engineering Pvt Ltd Location"
+              src="https://www.google.com/maps?q=10.5361903,76.2611716&z=17&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            ></iframe>
+            <div className="map-overlay-label">
+              <span>LOCATION</span>
+              <strong>LNE ENGINEERING PVT LTD</strong>
+            </div>
+          </div>
+
         </div>
 
-      </section>
+      </div>
+
+    </section>
 
     </main>
   );
