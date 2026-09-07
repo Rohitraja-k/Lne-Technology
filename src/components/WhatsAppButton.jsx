@@ -6,7 +6,6 @@ function WhatsAppButton() {
 
   const message =
     "Hello LNE Technology, I am interested in your services. I would like to know more.";
-
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
 
   return (

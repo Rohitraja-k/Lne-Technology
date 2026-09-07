@@ -28,7 +28,7 @@ const vacancies = [
     applyUrl: "#",
   },
   {
-    id: 2,
+    id: 3,
     title: "Sales Engineer",
     location: "Mannuthy, Thrissur",
     department: "Technology",

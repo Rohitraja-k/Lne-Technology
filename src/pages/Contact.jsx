@@ -131,6 +131,13 @@ function Contact() {
       setIsSending(false);
     }
   };
+  
+  const whatsappNumber = "917902977698";
+
+  const message =
+    "Hello LNE Technology, I am interested in your services. I would like to know more.";
+  const whatsAppUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+
 
   return (
     <main className="contact-page">
@@ -226,10 +233,30 @@ function Contact() {
               </div>
 
               <div className="contact-links">
-                <a href="#"><img src={whatsAppLogo} alt="whatsapp" /></a>
-                <a href="#"><img src={linkedInLogo} alt="linked In" /></a>
-                <a href="#"><img src={instaLogo} alt="Instagram" /></a>
-                <a href="#"><img src={fbLogo} alt="FaceBook" /></a>
+                <a href={whatsAppUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with LNE Technology on WhatsApp"
+                ><img src={whatsAppLogo} alt="whatsapp" />
+                </a>
+                <a href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with LNE Technology on WhatsApp"
+                ><img src={linkedInLogo} alt="linkedIn" />
+                </a>
+                <a href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with LNE Technology on WhatsApp"
+                ><img src={instaLogo} alt="Instagram" />
+                </a>
+                <a href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with LNE Technology on WhatsApp"
+                ><img src={fbLogo} alt="FaceBook" />
+                </a>
               </div>
 
             </div>
