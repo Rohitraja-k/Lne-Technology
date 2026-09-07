@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import whatsAppLogo from "../assets/icons/whatsapp-logo.svg";
+import linkedInLogo from "../assets/icons/linkedIn-logo.svg";
+import instaLogo from "../assets/icons/instagram.svg";
+import fbLogo from "../assets/icons/fb.svg";
 import "../styles/footer.css";
 
 function Footer() {
@@ -40,6 +44,12 @@ function Footer() {
               Delivering reliable engineering solutions through
               technology, expertise and innovation.
             </p>
+            <div className="footer-contact-links">
+              <a href="#"><img src={whatsAppLogo} alt="whatsapp" /></a>
+              <a href="#"><img src={linkedInLogo} alt="linked In" /></a>
+              <a href="#"><img src={instaLogo} alt="Instagram" /></a>
+              <a href="#"><img src={fbLogo} alt="FaceBook" /></a>
+            </div>
           </div>
 
 

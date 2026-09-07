@@ -139,6 +139,20 @@
 }
 
 
+/* Footer contact Links*/
+
+.footer-contact-links{
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer-contact-links img{
+  width: 30px;
+  filter:grayscale(1);
+} 
+
+
 /* Columns */
 
 .footer-column {

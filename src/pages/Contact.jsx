@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+import whatsAppLogo from "../assets/icons/whatsapp-logo.svg";
+import linkedInLogo from "../assets/icons/linkedIn-logo.svg";
+import instaLogo from "../assets/icons/instagram.svg";
+import fbLogo from "../assets/icons/fb.svg";
 import "../styles/contact.css";
 
 function Contact() {
@@ -219,6 +223,13 @@ function Contact() {
                   <p>Business & Partnership Enquiries</p>
                 </div>
 
+              </div>
+
+              <div className="contact-links">
+                <a href="#"><img src={whatsAppLogo} alt="whatsapp" /></a>
+                <a href="#"><img src={linkedInLogo} alt="linked In" /></a>
+                <a href="#"><img src={instaLogo} alt="Instagram" /></a>
+                <a href="#"><img src={fbLogo} alt="FaceBook" /></a>
               </div>
 
             </div>

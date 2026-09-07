@@ -462,6 +462,45 @@
 }
 
 
+.contact-links{
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  border-radius: 60px;
+}
+
+.contact-links a {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.contact-links a img {
+  display: block;
+  width: 40px;
+}
+
+.contact-links a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+.contact-links a:hover::after {
+  left: 150%;
+  transition: left 1.5s ease;
+}
+
 /* =========================================
    FORM
 ========================================= */
