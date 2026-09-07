@@ -1,0 +1,149 @@
+/* =========================
+   WHATSAPP WRAPPER
+========================= */
+
+.whatsapp-wrapper {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-button {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25d366;
+  border-radius: 50%;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.whatsapp-button svg {
+  width: 34px;
+  height: 34px;
+  fill: #ffffff;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.08);
+  transform: rotate(20deg);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   CHAT WITH US TOOLTIP
+========================= */
+
+.whatsapp-tooltip {
+  position: absolute;
+
+  right: 75px;
+
+  white-space: nowrap;
+
+  padding: 9px 15px;
+
+  background: #0F766E;
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(8px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+  pointer-events: none;
+}
+
+
+/* Small arrow */
+
+.whatsapp-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  right: -6px;
+  top: 50%;
+
+  width: 0;
+  height: 0;
+
+  transform: translateY(-50%);
+
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #071018;
+}
+
+
+/* Show tooltip */
+
+.whatsapp-wrapper:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateX(0);
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .whatsapp-wrapper {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .whatsapp-button {
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-button svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .whatsapp-tooltip {
+    right: 65px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+}

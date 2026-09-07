@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/careers.css';
 import { useNavigate } from 'react-router-dom';
+import vacancies from '../data/vacancies';
 // import careerAboutBg from "../assets/bg/career-work.webp";
 
 function Careers() {
@@ -31,6 +32,96 @@ function Careers() {
           </button>
         </div>
       </section>
+
+      {/* job vacancy section */}
+
+      <section className="job-vacancy">
+        <div className="job-vacancy-container">
+          <div className="job-vacancy-content">
+            <p className="job-label">Discover our Openings.</p>
+            <h1 className="job-title">Openings / Vacancy in <br /> Lne Technology</h1>
+          </div>
+          <div className="job-vacancy-grid">
+
+            {vacancies.map((vacancy) => (
+
+              <div className="job-card" key={vacancy.id}>
+
+                {/* Job Title / Department */}
+                <div className="job-card-header">
+
+                  <p>{vacancy.department}</p>
+
+                  <h2>{vacancy.title}</h2>
+
+                </div>
+
+
+                {/* Job Details */}
+                <div className="job-card-details">
+
+                  <div>
+                    <span>Location</span>
+                    <p>{vacancy.location}</p>
+                  </div>
+
+                  <div>
+                    <span>Type</span>
+                    <p>{vacancy.type}</p>
+                  </div>
+
+                </div>
+
+
+                {/* Description */}
+                <div className="job-card-description">
+
+                  <p>
+                    {vacancy.description}
+                  </p>
+
+                </div>
+
+
+                {/* Requirements */}
+                <div className="job-card-requirements">
+
+                  <h3>Requirements</h3>
+
+                  <ul>
+
+                    {vacancy.requirements.map((requirement, index) => (
+
+                      <li key={index}>
+                        {requirement}
+                      </li>
+
+                    ))}
+
+                  </ul>
+
+                </div>
+
+
+                {/* Apply Button */}
+                <a
+                  href={vacancy.applyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="job-apply-button"
+                >
+                  Apply Now
+                </a>
+
+              </div>
+
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/*  career about section*/}
 
       <section className="careers-about">
         <div className="careers-about-container">
