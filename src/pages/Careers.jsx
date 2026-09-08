@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import '../styles/careers.css';
-import { useNavigate } from 'react-router-dom';
-import vacancies from '../data/vacancies';
+import { useEffect, useState } from "react";
+import "../styles/careers.css";
+import { useNavigate } from "react-router-dom";
+import vacancies from "../data/vacancies";
 import discoverMore from "../assets/icons/discover-more.svg";
 
 function Careers() {
@@ -29,6 +29,7 @@ function Careers() {
       ========================= */}
 
       <section className="careers-hero">
+
         <div className="careers-hero-container">
 
           <p className="careers-hero-heading">
@@ -52,174 +53,163 @@ function Careers() {
           </button>
 
         </div>
+
       </section>
 
 
-      {/* =========================
-          JOB VACANCIES
-      ========================= */}
+{/* =========================
+    JOB VACANCIES
+========================= */}
 
-      <section className="job-vacancy">
+<section className="job-vacancy">
 
-        <div className="job-vacancy-container">
+  <div className="job-vacancy-container">
 
-          <div className="job-vacancy-content">
+    <div className="job-vacancy-content">
 
-            <p className="job-label">
-              Discover our Openings.
-            </p>
+      <p className="job-label">
+        Discover our Openings.
+      </p>
 
-            <h1 className="job-title">
-              Openings / Vacancy in <br />
-              LNE Technology
-            </h1>
+      <h1 className="job-title">
+        Openings / Vacancy in <br />
+        LNE Technology
+      </h1>
 
-          </div>
-
-
-          <div className="job-vacancy-list">
-
-            {vacancies.map((vacancy) => (
-
-              <div
-                className={`job-listing ${
-                  activeJob === vacancy.id ? "job-listing-active" : ""
-                }`}
-                key={vacancy.id}
-              >
-
-                {/* =========================
-                    JOB SUMMARY
-                ========================= */}
-
-                <div
-                  className="job-listing-header"
-                  onClick={() => toggleJob(vacancy.id)}
-                >
-
-                  <div className="job-number">
-                    {String(vacancy.id).padStart(2, "0")}
-                  </div>
+    </div>
 
 
-                  <div className="job-main-info">
+    {/* =========================
+        VACANCY SCROLL AREA
+    ========================= */}
 
-                    <h2 className="job-listing-title">
-                      {vacancy.title}
-                    </h2>
+    <div className="job-vacancy-scroll">
 
-                    <div className="job-meta">
+      <div className="job-vacancy-grid">
 
-                      <span>
-                        {vacancy.department}
-                      </span>
+        {vacancies.map((vacancy) => (
 
-                      <span>
-                        {vacancy.location}
-                      </span>
+          <article
+            className="job-card"
+            key={vacancy.id}
+          >
 
-                      <span>
-                        {vacancy.type}
-                      </span>
+            {/* CARD TOP */}
 
-                    </div>
+            <div className="job-card-top">
 
-                  </div>
+              <span className="job-card-number">
+                {String(vacancy.id).padStart(2, "0")}
+              </span>
 
+              <span className="job-card-type">
+                {vacancy.type}
+              </span>
 
-                  <button
-                    className="job-expand-button"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      toggleJob(vacancy.id);
-                    }}
-                    aria-label={
-                      activeJob === vacancy.id
-                        ? "Close job details"
-                        : "View job details"
-                    }
-                  >
-                    {activeJob === vacancy.id ? "−" : "+"}
-                  </button>
-
-                </div>
+            </div>
 
 
-                {/* =========================
-                    JOB DETAILS
-                ========================= */}
+            {/* CARD CONTENT */}
 
-                {activeJob === vacancy.id && (
+            <div className="job-card-content">
 
-                  <div className="job-listing-details">
+              <h2 className="job-card-title">
+                {vacancy.title}
+              </h2>
 
-                    <div className="job-detail-description">
+              <div className="job-card-meta">
 
-                      <span className="job-detail-label">
-                        DESCRIPTION
-                      </span>
+                <span>
+                  {vacancy.location}
+                </span>
 
-                      <p>
-                        {vacancy.description}
-                      </p>
-
-                    </div>
-
-
-                    <div className="job-detail-requirements">
-
-                      <span className="job-detail-label">
-                        REQUIREMENTS
-                      </span>
-
-                      <ul>
-
-                        {vacancy.requirements.map(
-                          (requirement, index) => (
-                            <li key={index}>
-                              {requirement}
-                            </li>
-                          )
-                        )}
-
-                      </ul>
-
-                    </div>
-
-
-                    <div className="job-apply-wrapper">
-
-                      <a
-                        href={vacancy.applyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="job-apply-button"
-                      >
-                        Apply Now
-                        <span>↗</span>
-                      </a>
-
-                    </div>
-
-                  </div>
-
-                )}
+                <span>
+                  {vacancy.department}
+                </span>
 
               </div>
 
-            ))}
 
-          </div>
+              <div className="job-card-line"></div>
 
-          <div className="discover-more">
-            <a
-             href=""            
-            >Discover More <img src={discoverMore} alt="Discover-More-option" /></a>
-          </div>
 
-        </div>
+              <p className="job-card-description">
+                {vacancy.description}
+              </p>
 
-      </section>
+
+              <div className="job-card-requirements">
+
+                <span className="job-card-label">
+                  REQUIREMENTS
+                </span>
+
+                <ul>
+
+                  {vacancy.requirements.map(
+                    (requirement, index) => (
+                      <li key={index}>
+                        {requirement}
+                      </li>
+                    )
+                  )}
+
+                </ul>
+
+              </div>
+
+            </div>
+
+
+            {/* CARD FOOTER */}
+
+            <div className="job-card-footer">
+
+              <a
+                href={vacancy.applyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="job-apply-button"
+              >
+                Apply Now
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </article>
+
+        ))}
+
+      </div>
+
+    </div>
+
+
+    {/* =========================
+        DISCOVER MORE
+    ========================= */}
+
+    <div className="discover-more">
+
+      <a
+        href="https://in.indeed.com/jobs?q=LNE+Engineering+Pvt+Ltd"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Discover More
+
+        <img
+          src={discoverMore}
+          alt="Discover More"
+        />
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* =========================
@@ -233,6 +223,7 @@ function Careers() {
           <div className="careers-about-image">
             {/* <img src={careerAboutBg} alt="Why-Work-with-Us" /> */}
           </div>
+
 
           <div className="careers-about-text">
 
