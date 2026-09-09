@@ -178,7 +178,8 @@ window.scrollTo({
 
       <section className="why-section">
 
-        <div className="why-container">
+        <div className="why">
+          <div className="why-container">
 
           {/* Introduction */}
 
@@ -273,6 +274,7 @@ window.scrollTo({
 
           </div>
 
+        </div>
         </div>
 
       </section>
