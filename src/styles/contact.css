@@ -377,7 +377,11 @@
    ENQUIRY FORM
 ========================================= */
 
+
 .enquiry-form-wrapper {
+  position: relative;
+  z-index: 1;
+
   padding: 45px;
 
   background: #0b1822;
@@ -385,7 +389,41 @@
   border: 1px solid rgba(143, 163, 181, 0.25);
 
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.25);
+    0 0 60px rgba(40, 83, 107, 0.12),
+    0 0 120px rgba(40, 83, 107, 0.09),
+    0 0 180px rgba(40, 83, 107, 0.05),
+    0 15px 45px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================
+   SUBTLE FORM AMBIENT GLOW
+========================================= */
+
+.enquiry-form-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  top: -45px;
+  right: -45px;
+  bottom: -45px;
+  left: -45px;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(40, 83, 107, 0.22) 0%,
+      rgba(40, 83, 107, 0.12) 35%,
+      rgba(40, 83, 107, 0.04) 58%,
+      transparent 75%
+    );
+
+  filter: blur(28px);
+
+  pointer-events: none;
 }
 
 .form-header {

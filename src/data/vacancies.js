@@ -113,6 +113,36 @@ const vacancies = [
 
     applyUrl: "https://in.indeed.com/viewjob?jk=a35cbf42bcdd92ea&from=shareddesktop_copy",
   },
+  {
+    id: 5,
+    title: "Sr. HR Executive/ Admin manager",
+    department: "Technology",
+    location: "Mannuthy, Thrissur",
+    type: "Full Time",
+    experience: "5 Years",
+
+    description:
+      "We are looking for a dynamic and experienced Senior HR Executive to manage overall HR operations along with administration activities. The candidate will be responsible for recruitment, employee engagement, payroll coordination, HR compliance, and day-to-day administrative functions to ensure smooth organizational operations.",
+    responsibilities: [
+      "Handle end-to-end recruitment and selection process",
+      "Conduct employee onboarding and induction programs.",
+      "Maintain employee records and HR documentation.",
+      "Coordinate payroll processing and attendance management.",
+      "Implement HR policies and ensure statutory compliance.",
+      "Handle employee engagement and grievance management.",
+    ],
+
+    requirements: [
+      "Strong communication and interpersonal skills.",
+      "Good knowledge of HR operations and labor laws.",
+      "Ability to handle administration activities independently.",
+      "Proficiency in MS Office and HRMS software.",
+      "Good organizational and multitasking abilities.",
+      "Strong problem-solving and coordination skills.",
+    ],
+
+    applyUrl: "https://in.indeed.com/viewjob?jk=fdabfd462ae9ff5e&from=shareddesktop_copy",
+  },
 ];
 
 export default vacancies;
