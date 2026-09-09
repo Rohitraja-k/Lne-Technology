@@ -104,7 +104,7 @@ const vacancies = [
     ],
 
     requirements: [
-      "Preferable to have an industrial work experience of around 5 years2+ years of relevant experience.",
+      "Preferable to have an industrial work experience of around 5 years.",
       "Accounting / Financial & Statutory & Audit functions.",
       "Compute taxes and prepare documents for Regular tax returns.",
       "Verifying, allocating, posting and reconciling accounts.",
