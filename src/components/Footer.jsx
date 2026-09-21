@@ -64,7 +64,7 @@ function Footer() {
                   aria-label="Chat with LNE Technology on WhatsApp"
                 ><img src={linkedInLogo} alt="linkedIn" />
                 </a>
-                <a href=""
+                <a href="https://www.instagram.com/lne_technology_thrissur/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Chat with LNE Technology on WhatsApp"
