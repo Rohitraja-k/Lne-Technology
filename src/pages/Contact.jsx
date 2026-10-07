@@ -239,7 +239,7 @@ function Contact() {
                   aria-label="Chat with LNE Technology on WhatsApp"
                 ><img src={whatsAppLogo} alt="whatsapp" />
                 </a>
-                <a href=""
+                <a href="https://www.linkedin.com/in/lne-technology/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Chat with LNE Technology on WhatsApp"
