@@ -1,250 +1,663 @@
+
+/* ========================================
+   ABOUT PAGE — GLOBAL STYLES
+======================================== */
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+  background: #071018;
+  color: #f3f5f6;
+}
+
+.about-page * {
+  box-sizing: border-box;
+}
+
+.section-label {
+  color: #d2a65a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   ABOUT HERO
+======================================== */
+
 .about-hero {
   position: relative;
-  min-height: 100vh;
-
+  isolation: isolate;
+  min-height: min(850px, 100svh);
   display: flex;
   align-items: center;
-
-  padding: 120px 5%;
-
+  padding: 140px 0 150px;
   background:
     linear-gradient(
       90deg,
-      rgba(7, 16, 24, 0.95) 0%,
-      rgba(7, 16, 24, 0.75) 45%,
-      rgba(7, 16, 24, 0.35) 100%
+      rgba(7, 16, 24, 0.97) 0%,
+      rgba(7, 16, 24, 0.88) 42%,
+      rgba(7, 16, 24, 0.48) 100%
+    ),
+    linear-gradient(
+      0deg,
+      #071018 0%,
+      transparent 35%
     ),
     url("../assets/bg/about-who-we-are.webp");
-
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-hero-container {
-  max-width: 1200px;
-  width: 90%;
+  position: relative;
+  width: min(1200px, 90%);
   margin: 0 auto;
 }
 
-.about-hero h1 {
-  font-size: clamp(50px, 7vw, 90px);
-  line-height: 1;
-  letter-spacing: -4px;
-  margin: 25px 0 35px;
+.about-hero-content {
   max-width: 900px;
 }
 
-.about-hero-description {
-  max-width: 800px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #9faeb9;
+.about-hero-label,
+.about-intro-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: #d2a65a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
 }
 
+.about-hero-label-line,
+.about-intro-label-line {
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  flex-shrink: 0;
+  background: #d2a65a;
+}
+
+.about-hero h1 {
+  max-width: 900px;
+  margin: 30px 0;
+  font-size: clamp(46px, 7vw, 88px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -3.5px;
+}
+
+.about-hero h1 span {
+  color: #aab5bd;
+}
+
+.about-hero-description {
+  max-width: 680px;
+  margin: 0;
+  color: #a7b2bb;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.about-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 38px;
+}
+
+.about-hero-primary,
+.about-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-hero-primary {
+  padding: 0 22px;
+  border: 1px solid #d2a65a;
+  background: #d2a65a;
+  color: #071018;
+}
+
+.about-hero-primary:hover {
+  transform: translateY(-3px);
+  border-color: #e4c184;
+  background: #e4c184;
+}
+
+.about-hero-secondary {
+  color: #e6eaed;
+}
+
+.about-hero-secondary span {
+  color: #d2a65a;
+  transition: transform 0.3s ease;
+}
+
+.about-hero-secondary:hover {
+  color: #d2a65a;
+}
+
+.about-hero-secondary:hover span {
+  transform: translate(3px, -3px);
+}
+
+.about-hero-scroll {
+  position: absolute;
+  right: 0;
+  bottom: -90px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #a7b2bb;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-hero-scroll:hover {
+  color: #d2a65a;
+}
+
+.about-hero-scroll-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(210, 166, 90, 0.45);
+  border-radius: 50%;
+  color: #d2a65a;
+}
+
+.about-hero-bottom-fade {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  background: linear-gradient(
+    0deg,
+    #071018 0%,
+    rgba(7, 16, 24, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* ========================================
+   ABOUT INTRO — WHO WE ARE
+======================================== */
+
 .about-intro {
-  padding: 150px 5%;
+  position: relative;
+  padding: 130px 0;
   background:
     linear-gradient(
       90deg,
-      rgba(7, 16, 24, 0.95) 0%,
-      rgba(7, 16, 24, 0.75) 45%,
-      rgba(7, 16, 24, 0.35) 100%
+      rgba(7, 16, 24, 0.96) 0%,
+      rgba(7, 16, 24, 0.91) 50%,
+      rgba(7, 16, 24, 0.78) 100%
     ),
     url("../assets/bg/about-hero-img.webp");
-
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-intro-container {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: start;
+  gap: clamp(50px, 8vw, 120px);
+  width: min(1200px, 90%);
+  margin: 0 auto;
 }
 
-
+.about-intro-heading {
+  max-width: 600px;
+}
 
 .about-intro-heading h2 {
-  margin: 0;
+  margin: 28px 0 0;
+  font-size: clamp(40px, 5.2vw, 66px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+}
 
-  font-size: clamp(40px, 5vw, 65px);
-  line-height: 1.05;
-  letter-spacing: -2px;
+.about-intro-heading h2 span {
+  color: #a7b2bb;
 }
 
 .about-intro-content {
-  padding: 40px;
+  padding-top: 30px;
 }
 
 .about-intro-content p {
-  margin: 0 0 25px;
-
-  font-size: 17px;
-  line-height: 1.8;
-  color: #9faeb9;
+  margin: 0 0 22px;
+  color: #a7b2bb;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
-.about-intro-lead {
-  font-size: 27px !important;
-  line-height: 1.6 !important;
-  color: #e5e9ec !important;
+.about-intro-content .about-intro-lead {
+  margin-bottom: 26px;
+  color: #e4e9ec;
+  font-size: clamp(19px, 2vw, 24px);
+  line-height: 1.6;
 }
+
+.about-intro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(210, 166, 90, 0.55);
+  color: #d2a65a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.about-intro-link:hover {
+  gap: 18px;
+  border-color: #e4c184;
+  color: #e4c184;
+}
+
+.about-intro-link:focus-visible,
+.about-hero-primary:focus-visible,
+.about-hero-secondary:focus-visible,
+.about-hero-scroll:focus-visible {
+  outline: 2px solid #d2a65a;
+  outline-offset: 5px;
+}
+
+/* ========================================
+   ABOUT VALUES
+======================================== */
 
 .about-values {
-  padding: 150px 0;
+  padding: 130px 0;
   background: #0b151e;
 }
 
 .about-values-container {
-  max-width: 1200px;
-  width: 90%;
+  width: min(1200px, 90%);
   margin: 0 auto;
 }
 
 .about-values-header {
-  max-width: 750px;
-  margin-bottom: 80px;
+  max-width: 760px;
+  margin-bottom: 65px;
 }
 
 .about-values-header h2 {
-  margin: 0;
+  margin: 25px 0 20px;
+  font-size: clamp(40px, 5.2vw, 66px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+}
 
-  font-size: clamp(40px, 5vw, 65px);
-  line-height: 1.05;
-  letter-spacing: -2px;
+.about-values-header h2 span {
+  color: #a7b2bb;
+}
+
+.about-values-description {
+  max-width: 600px;
+  margin: 0;
+  color: #a7b2bb;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .about-values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 25px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
 
-
 .about-value-01 {
-   background:
+  background:
     linear-gradient(
-      90deg,
-      rgba(7, 16, 24, 0.95) 0%,
-      rgba(7, 16, 24, 0.75) 45%,
-      rgba(7, 16, 24, 0.35) 100%
+      180deg,
+      rgba(7, 16, 24, 0.38) 0%,
+      rgba(7, 16, 24, 0.94) 100%
     ),
     url("../assets/bg/technical-expertise.webp");
-
-  background-size: cover;
-  background-position: center;
 }
 
 .about-value-02 {
   background:
     linear-gradient(
-      90deg,
-      rgba(7, 16, 24, 0.95) 0%,
-      rgba(7, 16, 24, 0.75) 45%,
-      rgba(7, 16, 24, 0.35) 100%
+      180deg,
+      rgba(7, 16, 24, 0.38) 0%,
+      rgba(7, 16, 24, 0.94) 100%
     ),
     url("../assets/bg/quality-driven.webp");
-
-  background-size: cover;
-  background-position: center;
 }
 
 .about-value-03 {
   background:
     linear-gradient(
-      90deg,
-      rgba(7, 16, 24, 0.95) 0%,
-      rgba(7, 16, 24, 0.75) 45%,
-      rgba(7, 16, 24, 0.35) 100%
+      180deg,
+      rgba(7, 16, 24, 0.38) 0%,
+      rgba(7, 16, 24, 0.94) 100%
     ),
     url("../assets/bg/reliable-partnership.webp");
-
-  background-size: cover;
-  background-position: center;
 }
-
-
-
-
 
 .about-value-card {
-  min-height: 370px;
-  padding: 55px;
-
-  border-radius:10px ;
- 
-
+  position: relative;
+  isolation: isolate;
   display: flex;
+  min-height: 370px;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  align-items: flex-start;
+  padding: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(167, 178, 187, 0.13);
+  border-radius: 6px;
+  background-color: #101d27;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
 }
 
-.about-value-card:hover{
-  transform: translateY(-10px);
+.about-value-card::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 16, 24, 0.1) 0%,
+    rgba(7, 16, 24, 0.2) 35%,
+    rgba(7, 16, 24, 0.7) 100%
+  );
+  content: "";
+  pointer-events: none;
 }
 
-
+.about-value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(210, 166, 90, 0.5);
+}
 
 .about-value-number {
   margin-bottom: auto;
+  color: #d2a65a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
 
-  font-size: 14px;
-  color: #71808b;
+.about-value-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.about-value-accent {
+  display: block;
+  width: 35px;
+  height: 2px;
+  margin-bottom: 20px;
+  background: #d2a65a;
+  transition: width 0.3s ease;
+}
+
+.about-value-card:hover .about-value-accent {
+  width: 55px;
 }
 
 .about-value-card h3 {
-  margin: 0 0 18px;
-
-  font-size: 24px;
+  margin: 0 0 15px;
+  color: #f3f5f6;
+  font-size: clamp(21px, 2vw, 26px);
   font-weight: 500;
+  line-height: 1.3;
 }
 
 .about-value-card p {
   margin: 0;
-
-  font-size: 16px;
-  line-height: 1.7;
-  color: #9faeb9;
+  color: #c0c9cf;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
-@media (max-width: 768px) {
-  .about-values {
-    padding: 100px 0;
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 1024px) {
+  .about-hero {
+    min-height: 760px;
   }
 
-  .about-values-header {
-    margin-bottom: 50px;
-  }
-
-  .about-values-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .about-value-card {
-    min-height: 280px;
-  }
-}
-
-@media (max-width: 768px) {
   .about-intro {
     padding: 100px 0;
   }
 
   .about-intro-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 45px;
   }
 
   .about-intro-heading h2 {
-    font-size: clamp(38px, 10vw, 52px);
+    font-size: clamp(38px, 5vw, 54px);
+    letter-spacing: -1.8px;
   }
 
-  .about-intro-lead {
-    font-size: 23px !important;
+  .about-values {
+    padding: 100px 0;
+  }
+
+  .about-values-grid {
+    gap: 16px;
+  }
+
+  .about-value-card {
+    min-height: 340px;
+    padding: 25px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: auto;
+    padding: 150px 0 125px;
+    background-position: 60% center;
+  }
+
+  .about-hero-container {
+    width: 88%;
+  }
+
+  .about-hero h1 {
+    margin: 25px 0;
+    font-size: clamp(42px, 10vw, 62px);
+    letter-spacing: -2px;
+    line-height: 1.08;
+  }
+
+  .about-hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .about-hero-actions {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .about-hero-primary {
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .about-hero-secondary {
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .about-hero-scroll {
+    right: auto;
+    bottom: -80px;
+    left: 0;
+    font-size: 9px;
+  }
+
+  .about-intro {
+    padding: 85px 0;
+  }
+
+  .about-intro-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 88%;
+  }
+
+  .about-intro-heading h2 {
+    margin-top: 24px;
+    font-size: clamp(39px, 9vw, 56px);
+    letter-spacing: -1.7px;
+  }
+
+  .about-intro-content {
+    padding-top: 0;
+  }
+
+  .about-intro-content .about-intro-lead {
+    font-size: 21px;
+  }
+
+  .about-intro-content p {
+    font-size: 14px;
+  }
+
+  .about-values {
+    padding: 85px 0;
+  }
+
+  .about-values-container {
+    width: 88%;
+  }
+
+  .about-values-header {
+    margin-bottom: 38px;
+  }
+
+  .about-values-header h2 {
+    margin-top: 24px;
+    font-size: clamp(38px, 9vw, 55px);
+    letter-spacing: -1.7px;
+  }
+
+  .about-values-description {
+    font-size: 14px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-value-card {
+    min-height: 300px;
+    padding: 28px;
+  }
+
+  .about-value-content {
+    margin-top: 45px;
+  }
+
+  .about-value-card h3 {
+    font-size: 24px;
+  }
+
+  .about-value-card p {
+    max-width: 480px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+  .about-hero {
+    padding-top: 130px;
+  }
+
+  .about-hero h1 {
+    font-size: 39px;
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .about-hero-scroll {
+    bottom: -75px;
+  }
+
+  .about-value-card {
+    min-height: 280px;
+    padding: 24px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero *,
+  .about-intro *,
+  .about-values * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

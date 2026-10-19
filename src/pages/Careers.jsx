@@ -1,39 +1,31 @@
-import { useEffect, useState } from "react";
-import "../styles/careers.css";
+
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import vacancies from "../data/vacancies";
 import discoverMore from "../assets/icons/discover-more.svg";
+import "../styles/careers.css";
 
 function Careers() {
-
-  const [activeJob, setActiveJob] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }, []);
 
-  const navigate = useNavigate();
-
-  const toggleJob = (id) => {
-    setActiveJob(activeJob === id ? null : id);
-  };
-
   return (
-    <main>
-
+    <main className="careers-page">
       {/* =========================
           CAREERS HERO
       ========================= */}
-
       <section className="careers-hero">
-
         <div className="careers-hero-container">
-
           <p className="careers-hero-heading">
-            CAREERS
+            <span className="careers-label-line" />
+            CAREERS AT LNE
           </p>
 
           <h1 className="careers-hero-intro">
@@ -41,193 +33,194 @@ function Careers() {
           </h1>
 
           <p className="careers-hero-description">
-            Be part of a team delivering innovative engineering solutions
-            with precision, expertise and reliability.
+            Be part of a team delivering engineering and industrial
+            supply solutions with a focus on practical expertise,
+            quality and reliability.
           </p>
 
           <button
+            type="button"
             className="careers-hero-button"
             onClick={() => navigate("/contact")}
           >
             Join Our Team
+            <span aria-hidden="true">↗</span>
           </button>
-
         </div>
 
+        <div
+          className="careers-hero-bottom-fade"
+          aria-hidden="true"
+        />
       </section>
 
+      {/* =========================
+          JOB VACANCIES
+      ========================= */}
+      <section className="job-vacancy" id="openings">
+        <div className="job-vacancy-container">
+          <div className="job-vacancy-content">
+            <p className="job-label">
+              <span className="careers-label-line" />
+              DISCOVER OUR OPENINGS
+            </p>
 
-{/* =========================
-    JOB VACANCIES
-========================= */}
+            <h2 className="job-title">
+              Opportunities to
+              <br />
+              grow with LNE.
+            </h2>
 
-<section className="job-vacancy">
+            <p className="job-intro-description">
+              Explore the opportunities listed below and find a role
+              that matches your interests and experience.
+            </p>
+          </div>
 
-  <div className="job-vacancy-container">
-
-    <div className="job-vacancy-content">
-
-      <p className="job-label">
-        Discover our Openings.
-      </p>
-
-      <h1 className="job-title">
-        Openings / Vacancy in <br />
-        LNE Technology
-      </h1>
-
-    </div>
-
-
-    {/* =========================
-        VACANCY SCROLL AREA
-    ========================= */}
-
-    <div className="job-vacancy-scroll">
-
-      <div className="job-vacancy-grid">
-
-        {vacancies.map((vacancy) => (
-
-          <article
-            className="job-card"
-            key={vacancy.id}
+          {/* Scrollable vacancy panel */}
+          <div
+            className="job-vacancy-scroll"
+            aria-label="Available job vacancies"
+            tabIndex={0}
           >
+            {vacancies.length > 0 ? (
+              <div className="job-vacancy-grid">
+                {vacancies.map((vacancy) => (
+                  <article
+                    className="job-card"
+                    key={vacancy.id}
+                  >
+                    {/* Card top */}
+                    <div className="job-card-top">
+                      <span className="job-card-number">
+                        {String(vacancy.id).padStart(2, "0")}
+                      </span>
 
-            {/* CARD TOP */}
+                      <span className="job-card-type">
+                        {vacancy.type}
+                      </span>
+                    </div>
 
-            <div className="job-card-top">
+                    {/* Card content */}
+                    <div className="job-card-content">
+                      <h3 className="job-card-title">
+                        {vacancy.title}
+                      </h3>
 
-              <span className="job-card-number">
-                {String(vacancy.id).padStart(2, "0")}
-              </span>
+                      <div className="job-card-meta">
+                        <span>
+                          <span
+                            className="job-meta-label"
+                            aria-hidden="true"
+                          >
+                            LOCATION
+                          </span>
+                          {vacancy.location}
+                        </span>
 
-              <span className="job-card-type">
-                {vacancy.type}
-              </span>
+                        <span>
+                          <span
+                            className="job-meta-label"
+                            aria-hidden="true"
+                          >
+                            DEPARTMENT
+                          </span>
+                          {vacancy.department}
+                        </span>
+                      </div>
 
-            </div>
+                      <div
+                        className="job-card-line"
+                        aria-hidden="true"
+                      />
 
+                      <p className="job-card-description">
+                        {vacancy.description}
+                      </p>
 
-            {/* CARD CONTENT */}
+                      <div className="job-card-requirements">
+                        <span className="job-card-label">
+                          REQUIREMENTS
+                        </span>
 
-            <div className="job-card-content">
+                        <ul>
+                          {vacancy.requirements.map(
+                            (requirement, index) => (
+                              <li key={`${vacancy.id}-${index}`}>
+                                {requirement}
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    </div>
 
-              <h2 className="job-card-title">
-                {vacancy.title}
-              </h2>
-
-              <div className="job-card-meta">
-
-                <span>
-                  {vacancy.location}
-                </span>
-
-                <span>
-                  {vacancy.department}
-                </span>
-
+                    {/* Card footer */}
+                    <div className="job-card-footer">
+                      <a
+                        href={vacancy.applyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="job-apply-button"
+                        aria-label={`Apply for ${vacancy.title}`}
+                      >
+                        Apply Now
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </article>
+                ))}
               </div>
-
-
-              <div className="job-card-line"></div>
-
-
-              <p className="job-card-description">
-                {vacancy.description}
-              </p>
-
-
-              <div className="job-card-requirements">
-
-                <span className="job-card-label">
-                  REQUIREMENTS
-                </span>
-
-                <ul>
-
-                  {vacancy.requirements.map(
-                    (requirement, index) => (
-                      <li key={index}>
-                        {requirement}
-                      </li>
-                    )
-                  )}
-
-                </ul>
-
+            ) : (
+              <div className="job-vacancy-empty">
+                <h3>No vacancies listed right now</h3>
+                <p>
+                  Please check back later or contact LNE Technology
+                  to enquire about future opportunities.
+                </p>
+                <button
+                  type="button"
+                  className="job-empty-contact"
+                  onClick={() => navigate("/contact")}
+                >
+                  Contact LNE <span aria-hidden="true">↗</span>
+                </button>
               </div>
+            )}
+          </div>
 
-            </div>
-
-
-            {/* CARD FOOTER */}
-
-            <div className="job-card-footer">
-
-              <a
-                href={vacancy.applyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="job-apply-button"
-              >
-                Apply Now
-                <span>↗</span>
-              </a>
-
-            </div>
-
-          </article>
-
-        ))}
-
-      </div>
-
-    </div>
-
-
-    {/* =========================
-        DISCOVER MORE
-    ========================= */}
-
-    <div className="discover-more">
-
-      <a
-        href="https://in.indeed.com/jobs?q=LNE+Engineering+Pvt+Ltd"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Discover More
-
-        <img
-          src={discoverMore}
-          alt="Discover More"
-        />
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
+          {/* Discover more */}
+          <div className="discover-more">
+            <a
+              href="https://in.indeed.com/jobs?q=LNE+Engineering+Pvt+Ltd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discover More
+              <img
+                src={discoverMore}
+                alt=""
+                aria-hidden="true"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* =========================
           WORK WITH LNE
       ========================= */}
-
       <section className="careers-about">
-
         <div className="careers-about-container">
-
-          <div className="careers-about-image">
-            {/* <img src={careerAboutBg} alt="Why-Work-with-Us" /> */}
-          </div>
-
+          <div
+            className="careers-about-image"
+            role="img"
+            aria-label="Industrial and engineering work environment"
+          />
 
           <div className="careers-about-text">
-
             <p className="careers-about-label">
+              <span className="careers-label-line" />
               WORK WITH LNE
             </p>
 
@@ -236,18 +229,23 @@ function Careers() {
             </h2>
 
             <p className="careers-about-description">
-              At LNE, you'll have the opportunity to work alongside
-              experienced professionals, contribute to real-world engineering
-              projects, and develop practical expertise across diverse
-              technical disciplines.
+              At LNE, you can contribute to industrial and commercial
+              requirements while developing your skills and practical
+              knowledge. We value a thoughtful, responsible and
+              customer-focused approach to our work.
             </p>
 
+            <button
+              type="button"
+              className="careers-about-button"
+              onClick={() => navigate("/contact")}
+            >
+              Connect With Us
+              <span aria-hidden="true">↗</span>
+            </button>
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

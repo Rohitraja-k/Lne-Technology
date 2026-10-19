@@ -1,16 +1,20 @@
+
+import { useEffect } from "react";
+
 import AboutHero from "../components/AboutHero";
 import AboutIntro from "../components/AboutIntro";
 import AboutValues from "../components/AboutValues";
 
 function About() {
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
-    <main>
+    <main className="about-page">
       <AboutHero />
       <AboutIntro />
       <AboutValues />
