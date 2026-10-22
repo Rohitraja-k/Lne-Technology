@@ -4,7 +4,7 @@ export const offeringGroups = [
     title: "Services",
     path: "/services",
     intro:
-      "Practical procurement and supply-chain services designed to help businesses coordinate sourcing, materials, quality, storage, and delivery requirements.",
+      "Practical procurement and supply-chain services designed to help businesses coordinate sourcing, quality, purchasing, and delivery requirements.",
     items: [
       {
         title: "Procurement & Shipping",
@@ -15,17 +15,6 @@ export const offeringGroups = [
           "Requirement and specification coordination",
           "Supplier and purchasing coordination",
           "Shipment planning and order follow-up",
-        ],
-      },
-      {
-        title: "Warehouse",
-        slug: "warehouse",
-        description:
-          "Organise storage and material-handling requirements to support efficient inventory and order coordination.",
-        details: [
-          "Storage and inventory coordination",
-          "Material receiving and dispatch planning",
-          "Order preparation and stock visibility",
         ],
       },
       {
@@ -78,7 +67,7 @@ export const offeringGroups = [
     title: "Solutions",
     path: "/solutions",
     intro:
-      "Supply-chain solutions focused on sourcing visibility, MRO requirements, spare-parts planning, and more organised inventory management.",
+      "Supply-chain solutions focused on sourcing visibility, MRO requirements, spare-parts availability, and more organised procurement.",
     items: [
       {
         title: "MRO Supply",
@@ -144,17 +133,6 @@ export const offeringGroups = [
           "Procurement process review",
           "Sourcing and supplier coordination",
           "Purchasing visibility and process improvement",
-        ],
-      },
-      {
-        title: "Inventory Planning & Optimisation",
-        slug: "inventory-planning-optimisation",
-        description:
-          "Support inventory planning by helping businesses assess material requirements, stock visibility, and replenishment needs.",
-        details: [
-          "Inventory requirement analysis",
-          "Replenishment planning support",
-          "Identification of excess and critical stock considerations",
         ],
       },
       {

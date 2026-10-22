@@ -18,7 +18,6 @@ import {
   PackageSearch,
   Settings2,
   Truck,
-  Warehouse,
   Workflow,
   Wrench,
 } from "lucide-react";
@@ -28,7 +27,6 @@ import "../styles/offerings.css";
 
 const iconMap = {
   "procurement-shipping": PackageSearch,
-  warehouse: Warehouse,
   "quality-control": ClipboardCheck,
   "spare-parts-procurement": Wrench,
   "supply-chain-project-management": Workflow,
@@ -40,7 +38,6 @@ const iconMap = {
   "spare-parts-availability": Boxes,
   "strategic-sourcing-mro-data-enrichment": ChartNoAxesCombined,
   "global-mro-procurement-excellence": Globe,
-  "inventory-planning-optimisation": Settings2,
   "plant-maintenance-mro-spare-parts-management": Factory,
 
   "procurement-services": Building2,
@@ -50,8 +47,6 @@ const iconMap = {
 const imageMap = {
   "procurement-shipping":
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85",
-  warehouse:
-    "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1400&q=85",
   "quality-control":
     "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=85",
   "spare-parts-procurement":
@@ -73,8 +68,6 @@ const imageMap = {
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
   "global-mro-procurement-excellence":
     "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1400&q=85",
-  "inventory-planning-optimisation":
-    "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1400&q=85",
   "plant-maintenance-mro-spare-parts-management":
     "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1400&q=85",
 
@@ -127,13 +120,11 @@ function OfferingOverview({ groupKey }) {
   }
 
   const ActiveIcon = iconMap[activeItem.slug] || Package;
-
   const activeImage =
     imageMap[activeItem.slug] || groupImages[group.path];
 
   return (
     <main className="offerings-page offering-selector-page">
-      {/* HERO */}
       <section className="offerings-hero offering-selector-hero">
         <div className="offerings-container">
           <p className="offerings-eyebrow">
@@ -145,9 +136,7 @@ function OfferingOverview({ groupKey }) {
             <span>Industrial Supply Chains.</span>
           </h1>
 
-          <p className="offerings-intro">
-            {group.intro}
-          </p>
+          <p className="offerings-intro">{group.intro}</p>
 
           <Link to="/contact" className="offerings-button">
             Discuss Your Requirements
@@ -156,12 +145,13 @@ function OfferingOverview({ groupKey }) {
         </div>
       </section>
 
-      {/* INTERACTIVE OFFERING SELECTOR */}
       <section className="offering-explorer">
         <div className="offerings-container">
           <div className="offering-explorer-heading">
             <div>
-              <p className="offerings-eyebrow">EXPLORE OUR CAPABILITIES</p>
+              <p className="offerings-eyebrow">
+                EXPLORE OUR CAPABILITIES
+              </p>
               <h2>Find the right support for your needs.</h2>
             </div>
 
@@ -209,7 +199,6 @@ function OfferingOverview({ groupKey }) {
             })}
           </div>
 
-          {/* SELECTED CATEGORY FEATURE */}
           <div
             className="offering-feature-panel"
             id="offering-feature-panel"
@@ -228,7 +217,8 @@ function OfferingOverview({ groupKey }) {
               />
 
               <span className="offering-image-label">
-                LNE TECHNOLOGY <span>/</span> {group.title.toUpperCase()}
+                LNE TECHNOLOGY <span>/</span>{" "}
+                {group.title.toUpperCase()}
               </span>
 
               <div className="offering-image-corner" aria-hidden="true">
@@ -248,12 +238,15 @@ function OfferingOverview({ groupKey }) {
               </div>
 
               <p className="offering-feature-index">
-                CAPABILITY {String(
+                CAPABILITY{" "}
+                {String(
                   group.items.findIndex(
                     (item) => item.slug === activeItem.slug
                   ) + 1
                 ).padStart(2, "0")}{" "}
-                <span>/ {String(group.items.length).padStart(2, "0")}</span>
+                <span>
+                  / {String(group.items.length).padStart(2, "0")}
+                </span>
               </p>
 
               <h3>{activeItem.title}</h3>
@@ -285,7 +278,6 @@ function OfferingOverview({ groupKey }) {
             </div>
           </div>
 
-          {/* CATEGORY COUNT */}
           <div className="offering-explorer-footer">
             <span>
               <span className="offering-footer-dot" />
@@ -299,7 +291,6 @@ function OfferingOverview({ groupKey }) {
         </div>
       </section>
 
-      {/* CONTACT CTA */}
       <section className="offerings-cta">
         <div className="offerings-container offerings-cta-inner">
           <div>

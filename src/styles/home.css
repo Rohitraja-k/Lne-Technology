@@ -143,6 +143,10 @@
   letter-spacing: 0.05px;
 }
 
+.hero-description b{
+  color:#55c2b4;
+}
+
 /* Call-to-action buttons */
 
 .hero-buttons {

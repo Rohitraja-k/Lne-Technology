@@ -10,7 +10,7 @@ const navigationGroups = [
     path: "/services",
     items: [
       { label: "Procurement & Shipping", path: "/services/procurement-shipping" },
-      { label: "Warehouse", path: "/services/warehouse" },
+      // { label: "Warehouse", path: "/services/warehouse" },
       { label: "Quality Control", path: "/services/quality-control" },
       { label: "Spare Parts Procurement", path: "/services/spare-parts-procurement" },
       {
@@ -36,10 +36,10 @@ const navigationGroups = [
         label: "Global MRO Procurement Excellence",
         path: "/solutions/global-mro-procurement-excellence",
       },
-      {
-        label: "Inventory Planning & Optimisation",
-        path: "/solutions/inventory-planning-optimisation",
-      },
+      // {
+      //   label: "Inventory Planning & Optimisation",
+      //   path: "/solutions/inventory-planning-optimisation",
+      // },
       {
         label: "Plant Maintenance & MRO Spare Parts Management",
         path: "/solutions/plant-maintenance-mro-spare-parts-management",

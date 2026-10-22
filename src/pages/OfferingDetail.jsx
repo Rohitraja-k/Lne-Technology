@@ -12,9 +12,6 @@ const offeringImages = {
   "procurement-shipping":
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85",
 
-  warehouse:
-    "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1400&q=85",
-
   "quality-control":
     "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1400&q=85",
 
@@ -44,9 +41,6 @@ const offeringImages = {
 
   "global-mro-procurement-excellence":
     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
-
-  "inventory-planning-optimisation":
-    "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1400&q=85",
 
   "plant-maintenance-mro-spare-parts-management":
     "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=85",
@@ -283,8 +277,9 @@ function OfferingDetail({ groupKey }) {
             <h2>How we can support your requirements</h2>
 
             <p>
-              Explore the key activities associated with {offering.title.toLowerCase()}.
-              The final scope can be agreed according to your needs.
+              Explore the key activities associated with{" "}
+              {offering.title.toLowerCase()}. The final scope can be agreed
+              according to your needs.
             </p>
           </div>
 
@@ -351,7 +346,8 @@ function OfferingDetail({ groupKey }) {
             </div>
 
             <Link to={group.path} className="offering-text-link">
-              View all {group.title.toLowerCase()} <span aria-hidden="true">↗</span>
+              View all {group.title.toLowerCase()}{" "}
+              <span aria-hidden="true">↗</span>
             </Link>
           </div>
 
@@ -383,9 +379,13 @@ function OfferingDetail({ groupKey }) {
       <section className="offerings-cta offering-detail-cta">
         <div className="offerings-container offerings-cta-inner">
           <div>
-            <p className="offerings-eyebrow">LET'S DISCUSS YOUR REQUIREMENTS</p>
+            <p className="offerings-eyebrow">
+              LET'S DISCUSS YOUR REQUIREMENTS
+            </p>
 
-            <h2>Looking for support with {offering.title.toLowerCase()}?</h2>
+            <h2>
+              Looking for support with {offering.title.toLowerCase()}?
+            </h2>
 
             <p>
               Tell us about your requirements, specifications, and priorities.

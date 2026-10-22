@@ -29,14 +29,14 @@ function Home() {
           </p>
 
           <h1>
-            Industrial Procurement.
+            Global Sourcing 
             <br />
-            <span>Supply Chain Solutions.</span>
+            <span>Company.</span>
           </h1>
 
-          <p className="hero-description">
-            Connecting businesses with sourcing, MRO supplies, spare parts
-            procurement and logistics support to help keep operations moving.
+          <p className="hero-description"><b>LNE TECHNOLOGY </b>
+            provides end to end sourcing services
+            from all key emerging supply markets in the world.
           </p>
 
           <div className="hero-buttons">
