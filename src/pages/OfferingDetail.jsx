@@ -3,51 +3,33 @@ import { Link, useParams } from "react-router-dom";
 import { offeringGroups } from "../data/offerings";
 import "../styles/offerings.css";
 
-/*
-  Industrial imagery for individual offerings.
-  These are remote Unsplash image URLs; local licensed assets
-  can replace them later for more reliable production delivery.
-*/
 const offeringImages = {
   "procurement-shipping":
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85",
-
   "quality-control":
     "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1400&q=85",
-
   "spare-parts-procurement":
     "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=85",
-
   "supply-chain-project-management":
     "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85",
-
   "logistics-shipping":
     "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=85",
-
   "mro-supply":
     "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1400&q=85",
-
   "master-data-management":
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
-
   "supply-chain-financing":
     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
-
   "spare-parts-availability":
     "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85",
-
   "strategic-sourcing-mro-data-enrichment":
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
-
   "global-mro-procurement-excellence":
     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
-
   "plant-maintenance-mro-spare-parts-management":
     "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=85",
-
   "procurement-services":
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
-
   "project-supply":
     "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85",
 };
@@ -68,7 +50,9 @@ function OfferingDetail({ groupKey }) {
     (item) => item.path === `/${groupKey}`
   );
 
-  const offering = group?.items.find((item) => item.slug === slug);
+  const offering = group?.items.find(
+    (item) => item.slug === slug
+  );
 
   if (!group || !offering) {
     return (
@@ -88,60 +72,28 @@ function OfferingDetail({ groupKey }) {
   const image =
     offeringImages[offering.slug] || groupImages[groupKey];
 
-  const currentIndex = group.items.findIndex(
-    (item) => item.slug === offering.slug
-  );
+  const overviewParagraphs =
+    offering.overview?.length > 0
+      ? offering.overview
+      : [offering.description];
+
+  const supportItems = offering.details || [];
+  const benefits = offering.benefits || [];
+  const approach = offering.approach || [];
 
   const relatedOfferings = group.items
     .filter((item) => item.slug !== offering.slug)
-    .sort((a, b) => {
-      const aDistance = Math.abs(
-        group.items.findIndex((item) => item.slug === a.slug) -
-          currentIndex
-      );
-
-      const bDistance = Math.abs(
-        group.items.findIndex((item) => item.slug === b.slug) -
-          currentIndex
-      );
-
-      return aDistance - bDistance;
-    })
     .slice(0, 3);
-
-  const processSteps = [
-    {
-      number: "01",
-      title: "Understand",
-      description:
-        "Clarify the requirement, specifications, priorities, and expected timeline.",
-    },
-    {
-      number: "02",
-      title: "Plan",
-      description:
-        "Identify suitable sourcing or coordination options based on the agreed scope.",
-    },
-    {
-      number: "03",
-      title: "Coordinate",
-      description:
-        "Support the agreed purchasing, documentation, quality, or logistics activities.",
-    },
-    {
-      number: "04",
-      title: "Follow Through",
-      description:
-        "Maintain communication and follow up on the agreed next steps and delivery requirements.",
-    },
-  ];
 
   return (
     <main className="offerings-page offering-detail-page">
-      {/* HERO */}
+      {/* PAGE INTRODUCTION */}
       <section className="offering-hero">
         <div className="offerings-container">
-          <nav className="offerings-breadcrumb" aria-label="Breadcrumb">
+          <nav
+            className="offerings-breadcrumb"
+            aria-label="Breadcrumb"
+          >
             <Link to="/">Home</Link>
             <span>/</span>
             <Link to={group.path}>{group.title}</Link>
@@ -167,11 +119,14 @@ function OfferingDetail({ groupKey }) {
                   state={{ subject: offering.title }}
                   className="offerings-button"
                 >
-                  Enquire About This Offering
+                  Discuss Your Requirements
                   <span aria-hidden="true">↗</span>
                 </Link>
 
-                <Link to={group.path} className="offering-secondary-link">
+                <Link
+                  to={group.path}
+                  className="offering-secondary-link"
+                >
                   Explore {group.title}
                   <span aria-hidden="true">→</span>
                 </Link>
@@ -181,7 +136,7 @@ function OfferingDetail({ groupKey }) {
             <div className="offering-hero-image">
               <img
                 src={image}
-                alt={`${offering.title} — industrial procurement and supply-chain operations`}
+                alt={`${offering.title} in an industrial business context`}
                 fetchPriority="high"
                 onError={(event) => {
                   event.currentTarget.style.visibility = "hidden";
@@ -190,37 +145,30 @@ function OfferingDetail({ groupKey }) {
 
               <div className="offering-image-caption">
                 <span className="offering-image-caption-dot" />
-                <span>PROCUREMENT &amp; SUPPLY-CHAIN SUPPORT</span>
+                <span>INDUSTRIAL PROCUREMENT &amp; SUPPLY CHAIN</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* OVERVIEW */}
+      {/* WHAT IT IS AND WHY IT MATTERS */}
       <section className="offering-overview-section">
         <div className="offerings-container offering-overview-grid">
           <div className="offering-overview-copy">
-            <p className="offerings-eyebrow">OVERVIEW</p>
+            <p className="offerings-eyebrow">
+              UNDERSTANDING THE OFFERING
+            </p>
 
             <h2>
-              A structured approach to{" "}
-              <span>{offering.title.toLowerCase()}</span>
+              {offering.overviewTitle || offering.title}
             </h2>
 
-            <p className="offering-body-copy">
-              Business requirements often involve multiple specifications,
-              purchasing priorities, timelines, and coordination activities.
-              A clear and organised approach helps bring these requirements
-              together.
-            </p>
-
-            <p className="offering-body-copy">
-              LNE Technology aims to understand each requirement and discuss
-              suitable ways to support the process. The scope of work can be
-              aligned with the products, operational priorities, and delivery
-              expectations agreed with the customer.
-            </p>
+            {overviewParagraphs.map((paragraph, index) => (
+              <p className="offering-body-copy" key={index}>
+                {paragraph}
+              </p>
+            ))}
 
             <Link
               to="/contact"
@@ -232,140 +180,153 @@ function OfferingDetail({ groupKey }) {
           </div>
 
           <aside className="offering-highlight-card">
-            <div className="offering-highlight-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 48 48"
-                width="38"
-                height="38"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="8" y="8" width="32" height="32" rx="5" />
-                <path d="M16 18h16M16 24h16M16 30h9" />
-                <path d="m29 30 3 3 6-7" />
-              </svg>
-            </div>
-
-            <p className="offerings-eyebrow">OUR APPROACH</p>
-
-            <h3>Clear requirements. Coordinated execution.</h3>
-
-            <p>
-              Every engagement begins with understanding the requirement and
-              agreeing on the appropriate scope of support.
+            <p className="offerings-eyebrow">
+              AT A GLANCE
             </p>
 
-            <ul className="offering-highlight-list">
-              <li>Requirement-focused coordination</li>
-              <li>Clear communication</li>
-              <li>Attention to specifications</li>
-              <li>Structured follow-up</li>
-            </ul>
+            <h3>Understanding the requirement comes first.</h3>
+
+            <p>
+              The right scope depends on the products, specifications,
+              operational priorities, and delivery expectations involved.
+              LNE can discuss these requirements with your team and clarify
+              the appropriate scope of support.
+            </p>
           </aside>
         </div>
       </section>
 
-      {/* AREAS OF SUPPORT */}
+      {/* WHAT LNE SUPPORTS */}
       <section className="offering-support-section">
         <div className="offerings-container">
           <div className="offering-section-heading">
-            <p className="offerings-eyebrow">AREAS OF SUPPORT</p>
+            <p className="offerings-eyebrow">
+              SCOPE OF SUPPORT
+            </p>
 
-            <h2>How we can support your requirements</h2>
+            <h2>What this offering covers</h2>
 
             <p>
-              Explore the key activities associated with{" "}
-              {offering.title.toLowerCase()}. The final scope can be agreed
-              according to your needs.
+              The following activities describe the main areas associated
+              with {offering.title.toLowerCase()}. The exact scope can be
+              agreed based on your requirements.
             </p>
           </div>
 
-          <div className="offering-support-grid">
-            {offering.details.map((detail, index) => (
-              <article className="offering-support-card" key={detail}>
-                <span className="offering-support-number">
+          <div className="offering-scope-list">
+            {supportItems.map((item, index) => (
+              <article className="offering-scope-item" key={item}>
+                <span className="offering-scope-index">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <div className="offering-support-marker" aria-hidden="true">
-                  ↗
+                <div className="offering-scope-content">
+                  <h3>{item}</h3>
                 </div>
-
-                <h3>{detail}</h3>
-
-                <p>
-                  Coordinate this activity around the agreed specifications,
-                  requirements, and operational priorities.
-                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
+      {/* HOW THE WORK IS CARRIED OUT */}
       <section className="offering-process-section">
         <div className="offerings-container">
           <div className="offering-section-heading">
-            <p className="offerings-eyebrow">OUR WORKING APPROACH</p>
+            <p className="offerings-eyebrow">
+              HOW WE WORK
+            </p>
 
-            <h2>From requirement to coordinated action</h2>
+            <h2>A clear process, built around your requirements</h2>
 
             <p>
-              A straightforward process helps keep requirements, communication,
-              and next steps organised.
+              Each engagement follows a practical sequence, with the
+              activities adapted to the needs and agreed scope of
+              {` ${offering.title.toLowerCase()}`}.
             </p>
           </div>
 
-          <div className="offering-process-grid">
-            {processSteps.map((step) => (
-              <article className="offering-process-card" key={step.number}>
+          <div className="offering-process-list">
+            {approach.map((description, index) => (
+              <article className="offering-process-item" key={description}>
                 <span className="offering-process-number">
-                  {step.number}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3>{step.title}</h3>
+                <div>
+                  <h3>
+                    {[
+                      "Review the requirement",
+                      "Coordinate the activity",
+                      "Follow through",
+                    ][index] || `Step ${index + 1}`}
+                  </h3>
 
-                <p>{step.description}</p>
+                  <p>{description}</p>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
+
+      {/* PRACTICAL BUSINESS VALUE */}
+      {benefits.length > 0 && (
+        <section className="offering-business-section">
+          <div className="offerings-container offering-business-grid">
+            <div>
+              <p className="offerings-eyebrow">
+                BUSINESS APPLICATION
+              </p>
+
+              <h2>What this can help your team manage</h2>
+
+              <p className="offering-body-copy">
+                Depending on your existing processes and the agreed scope,
+                this offering can help bring greater structure to the
+                following areas.
+              </p>
+            </div>
+
+            <ul className="offering-business-list">
+              {benefits.map((benefit) => (
+                <li key={benefit}>
+                  <span aria-hidden="true">✓</span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* RELATED OFFERINGS */}
       <section className="offering-related-section">
         <div className="offerings-container">
           <div className="offering-related-heading">
             <div>
-              <p className="offerings-eyebrow">EXPLORE FURTHER</p>
-              <h2>Related {group.title.toLowerCase()}</h2>
+              <p className="offerings-eyebrow">
+                RELATED CAPABILITIES
+              </p>
+
+              <h2>Explore related {group.title.toLowerCase()}</h2>
             </div>
 
             <Link to={group.path} className="offering-text-link">
-              View all {group.title.toLowerCase()}{" "}
+              View all {group.title.toLowerCase()}
               <span aria-hidden="true">↗</span>
             </Link>
           </div>
 
           <div className="offering-related-grid">
-            {relatedOfferings.map((item, index) => (
+            {relatedOfferings.map((item) => (
               <Link
                 to={`${group.path}/${item.slug}`}
                 className="offering-related-card"
                 key={item.slug}
               >
-                <span className="offering-related-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
                 <h3>{item.title}</h3>
-
                 <p>{item.description}</p>
-
                 <span className="offering-related-arrow" aria-hidden="true">
                   ↗
                 </span>
@@ -375,21 +336,22 @@ function OfferingDetail({ groupKey }) {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* CONTACT */}
       <section className="offerings-cta offering-detail-cta">
         <div className="offerings-container offerings-cta-inner">
           <div>
             <p className="offerings-eyebrow">
-              LET'S DISCUSS YOUR REQUIREMENTS
+              ENQUIRE WITH LNE TECHNOLOGY
             </p>
 
             <h2>
-              Looking for support with {offering.title.toLowerCase()}?
+              Let's discuss your {offering.title.toLowerCase()} requirements.
             </h2>
 
             <p>
-              Tell us about your requirements, specifications, and priorities.
-              We can discuss the appropriate next steps together.
+              Share your product requirements, specifications, project
+              details, or delivery priorities to discuss the appropriate
+              next steps.
             </p>
           </div>
 

@@ -1787,3 +1787,303 @@
     transition: none;
   }
 }
+
+
+
+/* =========================================
+   LNE — CLEAN INDUSTRIAL B2B DETAIL PAGES
+========================================= */
+
+.offering-detail-page {
+  --offering-accent: #55c2b4;
+  --offering-bg: #071018;
+  --offering-surface: #0d1b25;
+  --offering-border: rgba(255, 255, 255, 0.12);
+  --offering-text: #eef2f4;
+  --offering-muted: #b3c0c8;
+
+  background: var(--offering-bg);
+  color: var(--offering-text);
+}
+
+/* Consistent accent colour */
+
+.offering-detail-page .offerings-eyebrow {
+  color: var(--offering-accent);
+}
+
+.offering-detail-page .offering-hero .offerings-eyebrow,
+.offering-detail-page .offering-process-section .offerings-eyebrow,
+.offering-detail-page .offerings-cta .offerings-eyebrow {
+  color: var(--offering-accent);
+}
+
+.offering-detail-page .offerings-button {
+  color: #071018;
+  background: var(--offering-accent);
+  border-color: var(--offering-accent);
+  border-radius: 4px;
+}
+
+.offering-detail-page .offerings-button:hover {
+  color: #fff;
+  background: transparent;
+  border-color: var(--offering-accent);
+}
+
+.offering-detail-page .offering-text-link,
+.offering-detail-page .offering-secondary-link {
+  color: var(--offering-accent);
+}
+
+.offering-detail-page .offering-text-link:hover,
+.offering-detail-page .offering-secondary-link:hover {
+  color: #fff;
+}
+
+/* Hero: keep the existing layout, simplify the styling */
+
+.offering-detail-page .offering-hero {
+  background: linear-gradient(120deg, #071018 0%, #102431 100%);
+}
+
+.offering-detail-page .offering-hero-image {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.offering-detail-page .offering-hero-image img {
+  object-position: center;
+}
+
+/* Overview */
+
+.offering-detail-page .offering-overview-section {
+  background: var(--offering-bg);
+  border-bottom: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-overview-copy h2,
+.offering-detail-page .offering-section-heading h2,
+.offering-detail-page .offering-related-heading h2,
+.offering-detail-page .offering-business-section h2 {
+  color: var(--offering-text);
+  letter-spacing: -0.7px;
+}
+
+.offering-detail-page .offering-body-copy,
+.offering-detail-page .offering-section-heading > p:last-child {
+  color: var(--offering-muted);
+}
+
+.offering-detail-page .offering-highlight-card {
+  background: var(--offering-surface);
+  border: 1px solid var(--offering-border);
+  border-radius: 4px;
+}
+
+.offering-detail-page .offering-highlight-card h3 {
+  color: var(--offering-text);
+}
+
+.offering-detail-page .offering-highlight-card > p:not(.offerings-eyebrow),
+.offering-detail-page .offering-highlight-list li {
+  color: var(--offering-muted);
+}
+
+.offering-detail-page .offering-highlight-list {
+  border-top-color: var(--offering-border);
+}
+
+.offering-detail-page .offering-highlight-list li::before {
+  color: var(--offering-accent);
+}
+
+/* Scope of support: simple content rows */
+
+.offering-detail-page .offering-support-section {
+  background: #0a151e;
+  border-bottom: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-scope-list {
+  border-top: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-scope-item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-scope-index {
+  padding-top: 3px;
+  color: var(--offering-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.offering-detail-page .offering-scope-content h3 {
+  margin: 0;
+  color: var(--offering-text);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* Process: editorial rows, not cards */
+
+.offering-detail-page .offering-process-section {
+  background: #071018;
+  border-bottom: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-process-list {
+  border-top: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-process-item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-process-item .offering-process-number {
+  margin: 2px 0 0;
+  color: var(--offering-accent);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.offering-detail-page .offering-process-item h3 {
+  margin: 0 0 8px;
+  color: var(--offering-text);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.offering-detail-page .offering-process-item p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--offering-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Business application */
+
+.offering-detail-page .offering-business-section {
+  padding: 78px 0;
+  background: #0a151e;
+  border-bottom: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-business-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 70px;
+}
+
+.offering-detail-page .offering-business-grid h2 {
+  margin: 0 0 18px;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.25;
+}
+
+.offering-detail-page .offering-business-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offering-business-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--offering-border);
+  color: var(--offering-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.offering-detail-page .offering-business-list li span {
+  flex-shrink: 0;
+  color: var(--offering-accent);
+  font-weight: 700;
+}
+
+/* Related offerings */
+
+.offering-detail-page .offering-related-section {
+  background: var(--offering-bg);
+}
+
+.offering-detail-page .offering-related-card {
+  background: var(--offering-surface);
+  border: 1px solid var(--offering-border);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.offering-detail-page .offering-related-card:hover {
+  background: #122631;
+  border-color: var(--offering-accent);
+  transform: none;
+}
+
+.offering-detail-page .offering-related-card h3 {
+  color: var(--offering-text);
+}
+
+.offering-detail-page .offering-related-card p {
+  color: var(--offering-muted);
+}
+
+.offering-detail-page .offering-related-arrow {
+  color: var(--offering-accent);
+}
+
+/* Final enquiry section */
+
+.offering-detail-page .offerings-cta {
+  background: #0d1b25;
+  border-top: 1px solid var(--offering-border);
+}
+
+.offering-detail-page .offerings-cta h2 {
+  color: var(--offering-text);
+}
+
+.offering-detail-page .offerings-cta-inner > div > p:last-child {
+  color: var(--offering-muted);
+}
+
+/* Responsive layout */
+
+@media (max-width: 760px) {
+  .offering-detail-page .offering-scope-item,
+  .offering-detail-page .offering-process-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 14px;
+    padding: 22px 0;
+  }
+
+  .offering-detail-page .offering-business-section {
+    padding: 58px 0;
+  }
+
+  .offering-detail-page .offering-business-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
