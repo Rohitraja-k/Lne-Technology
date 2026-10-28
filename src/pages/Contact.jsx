@@ -132,7 +132,7 @@ function Contact() {
     }
   };
   
-  const whatsappNumber = "917902977698";
+  const whatsappNumber = "919037879035";
 
   const message =
     "Hello LNE Technology, I am interested in your services. I would like to know more.";
